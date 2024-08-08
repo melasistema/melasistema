@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
+
+
+
+
+
 /**
 General Style
     Structure
@@ -18,11 +24,25 @@ body {
     max-width: 350px;
     padding-right:50px;
 }
+@media (max-width: 1023px) {
+    .left-column {
+        flex: unset;
+        max-width: unset;
+        padding-right:unset;
+    }
+}
 .right-column {
     flex: 3 1 auto;
     max-width: 475px;
     border-left: 3px solid black;
     padding-left:50px;
+}
+@media (max-width: 1023px) {
+    .right-column {
+        flex: unset;
+        max-width: unset;
+        border-left: 3px solid black;
+    }
 }
 /**
 General Style
@@ -157,6 +177,14 @@ Content Style
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
     min-height: 1280px;
     max-width: 900px;
+}
+@media (max-width: 1023px) {
+    .content-wrapper {
+        display: block;
+        width: unset;
+        margin:unset;
+        padding: 50px 20px 50px 20px;
+    }
 }
 
 /**
