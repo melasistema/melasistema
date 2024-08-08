@@ -42,6 +42,8 @@ body {
         flex: unset;
         max-width: unset;
         border-left: 3px solid black;
+        padding-left:25px;
+        margin-top: 40px;
     }
 }
 /**
@@ -270,6 +272,12 @@ Content Style
     width: 50px;
     margin-bottom:1em;
     filter: drop-shadow(0 2px 2px rgba(86, 86, 86, 0.2));
+}
+
+@media (max-width: 1023px) {
+    .resume-tools .tools-group {
+        margin-top:2em;
+    }
 }
 
 /**
