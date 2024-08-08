@@ -1,10 +1,14 @@
 ﻿<div class="content-wrapper">
     <div class="resume-heading">
-        <h1 class="resume-name">LUCA <br>VISCIOLA</h1>
-        <h2 class="resume-job-position-one">Full Stack Developer</h2>
-        <h3 class="resume-job-position-two">Technology Consultant</h3>
+        <h1 class="resume-name" style="margin:0">LUCA VISCIOLA</h1>
+        <h2 class="resume-job-position-one" style="margin:0">Full Stack Developer</h2>
+        <h3 class="resume-job-position-two" style="margin:0">Technology Consultant</h3>
     </div>
     <hr class="separator keep-right">
+    <div class="resume-who-am-i">
+            <p>Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti.
+                Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.</p>
+        </div>
     <div class="resume-personal-info" style="display:flex; justify-content:space-between">
         <p><a style="" href="mailto:info@melasistema.com">info@melasistema.com</a> <span class="icon"><img src="assets/svg/mail.svg" alt="icon" style="width:30px; transform: translateY(10px)"></span></p>
         <p><a href="https://www.linkedin.com/in/luca-visciola/" target="_blank">luca-visciola</a> <span class="icon"><img src="assets/svg/linkedin.svg" alt="icon" style="width:30px; transform: translateY(10px)"></span></p>
@@ -20,57 +24,6 @@
     <div class="resume-know-how">
         <h3 class="">COMPETENZE</h3>
         <hr  class="separator keep-left">
-        <div class="slider-group">
-            <div class="slider-wrapper">
-                <h3>PHP</h3>
-                <div class="slider slider-php">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>HTML5</h3>
-                <div class="slider slider-html5">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>CSS3</h3>
-                <div class="slider slider-css3">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>JS</h3>
-                <div class="slider slider-js">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>SHOPWARE</h3>
-                <div class="slider slider-shopware">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>LARAVEL</h3>
-                <div class="slider slider-laravel">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="slider-wrapper">
-                <h3>WORDPRESS</h3>
-                <div class="slider slider-wordpress">
-                    <div class="track"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-        </div>
         <div class="languages-group" style="display: flex;flex-wrap: wrap;justify-content:space-between;align-items: center;">
             <div class="language-icon">
                 <img src="assets/svg/tools/php.svg" alt="icon" width="50px">
@@ -131,10 +84,5 @@
             </div>
         </div>
     </div>
-    <div class="resume-who-am-i">
-            <h3 class="">CHI SONO</h3>
-            <hr  class="separator keep-left">
-            <p>Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti.
-                Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.</p>
-        </div>
+
 </div>
