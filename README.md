@@ -16,6 +16,10 @@ LUCA VISCIOLA
   </tr>
 </table>
 
+
+[view full resume](https://resume.lucavisciola.com)
+#
+
 ### DICONO DI ME
 
 * * *
@@ -28,13 +32,13 @@ A suo agio nella gestione di situazioni critiche.
 
 * * *
 
-<table style="border:none">
-  <tr style="border: none!important;">
-    <td style="border: none!important;"><img src="assets/svg/tools/php.svg" alt="php" width="50px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/mysql.svg" alt="mysql" width="50px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/html5.svg" alt="html5" width="50px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/css-3.svg" alt="css-3" width="50px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/javascript.svg" alt="javascript" width="50px"></td>
+<table>
+  <tr>
+    <td><img src="assets/svg/tools/php.svg" alt="php" width="80px"></td>
+    <td><img src="assets/svg/tools/mysql.svg" alt="mysql" width="80px"></td>
+    <td><img src="assets/svg/tools/html5.svg" alt="html5" width="80px"></td>
+    <td><img src="assets/svg/tools/css-3.svg" alt="css-3" width="80px"></td>
+    <td><img src="assets/svg/tools/javascript.svg" alt="javascript" width="80px"></td>
   </tr>
 </table>
 
@@ -42,21 +46,23 @@ A suo agio nella gestione di situazioni critiche.
 
 * * *
 
-<table style="border:none">
-  <tr style="border: none!important;">
-    <td style="border: none!important;"><img src="assets/svg/tools/laravel.svg" alt="laravel" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/shopware.svg" alt="shopware" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/wordpress.svg" alt="wordpress" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/symfony.svg" alt="symfony" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/vue.svg" alt="vue" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/nodejs.svg" alt="nodejs" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/jquery.svg" alt="jquery" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/sass.svg" alt="sass" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/npm.svg" alt="npm" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/composer.svg" alt="composer" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/phpstorm.svg" alt="phpstorm" width="80px"></td>
-    <td style="border: none!important;"><img src="assets/svg/tools/git.svg" alt="git" width="80"></td>
+<table>
+  <tr>
+    <td><img src="assets/svg/tools/laravel.svg" alt="laravel" width="80px"></td>
+    <td><img src="assets/svg/tools/shopware.svg" alt="shopware" width="80px"></td>
+    <td><img src="assets/svg/tools/wordpress.svg" alt="wordpress" width="80px"></td>
+    <td><img src="assets/svg/tools/symfony.svg" alt="symfony" width="80px"></td>
+    <td><img src="assets/svg/tools/vue.svg" alt="vue" width="80px"></td>
+    <td><img src="assets/svg/tools/nodejs.svg" alt="nodejs" width="80px"></td>
   </tr>
+<tr> 
+<td><img src="assets/svg/tools/jquery.svg" alt="jquery" width="80px"></td>
+    <td><img src="assets/svg/tools/sass.svg" alt="sass" width="80px"></td>
+    <td><img src="assets/svg/tools/npm.svg" alt="npm" width="80px"></td>
+    <td><img src="assets/svg/tools/composer.svg" alt="composer" width="80px"></td>
+    <td><img src="assets/svg/tools/phpstorm.svg" alt="phpstorm" width="80px"></td>
+    <td><img src="assets/svg/tools/git.svg" alt="git" width="80"></td>
+</tr>
 </table>
 
 ![Luca Visciola - Resume footer](assets/images/luca-visciola-resume-footer.png)
