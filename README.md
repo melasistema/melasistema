@@ -1,24 +1,20 @@
-﻿LUCA VISCIOLA
+﻿![Luca Visciola - Resume header](assets/images/luca-visciola-resume-header.png)
+
+LUCA VISCIOLA
 =============
+### Full Stack Developer
 
-Full Stack Developer
---------------------
-
-### Technology Consultant
+#### Technology Consultant
 
 * * *
 
-Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti. Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.
-
-
-<table>
-  <tr>
-    <td><a href="mailto:info@melasistema.com"><img src="assets/svg/mail.svg" alt="icon" width="30px"></a></td>
-    <td><a href="https://www.linkedin.com/in/luca-visciola/"><img src="assets/svg/linkedin.svg" alt="icon" width="30px">
-    <td><a href="https://github.com/melasistema"><img src="assets/svg/github.svg" alt="icon" width="30px"></td>
+<table style="border:none">
+  <tr style="border: none!important;">
+    <td style="border: none!important;"><a href="mailto:info@melasistema.com"><img src="assets/svg/mail.svg" alt="icon" width="30px"></a></td>
+    <td style="border: none!important;"><a href="https://www.linkedin.com/in/luca-visciola/"><img src="assets/svg/linkedin.svg" alt="icon" width="30px"></a></td>
+    <td style="border: none!important;"><a href="https://github.com/melasistema"><img src="assets/svg/github.svg" alt="icon" width="30px"></a></td>
   </tr>
 </table>
-
 
 ### DICONO DI ME
 
@@ -32,40 +28,35 @@ A suo agio nella gestione di situazioni critiche.
 
 * * *
 
-![icon](assets/svg/tools/php.svg)
-
-![icon](assets/svg/tools/mysql.svg)
-
-![icon](assets/svg/tools/html5.svg)
-
-![icon](assets/svg/tools/css-3.svg)
-
-![icon](assets/svg/tools/javascript.svg)
+<table style="border:none">
+  <tr style="border: none!important;">
+    <td style="border: none!important;"><img src="assets/svg/tools/php.svg" alt="php" width="50px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/mysql.svg" alt="mysql" width="50px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/html5.svg" alt="html5" width="50px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/css-3.svg" alt="css-3" width="50px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/javascript.svg" alt="javascript" width="50px"></td>
+  </tr>
+</table>
 
 ### TOOLS + UTILIZZATI
 
 * * *
 
-![icon](assets/svg/tools/laravel.svg)
+<table style="border:none">
+  <tr style="border: none!important;">
+    <td style="border: none!important;"><img src="assets/svg/tools/laravel.svg" alt="laravel" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/shopware.svg" alt="shopware" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/wordpress.svg" alt="wordpress" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/symfony.svg" alt="symfony" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/vue.svg" alt="vue" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/nodejs.svg" alt="nodejs" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/jquery.svg" alt="jquery" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/sass.svg" alt="sass" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/npm.svg" alt="npm" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/composer.svg" alt="composer" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/phpstorm.svg" alt="phpstorm" width="80px"></td>
+    <td style="border: none!important;"><img src="assets/svg/tools/git.svg" alt="git" width="80"></td>
+  </tr>
+</table>
 
-![icon](assets/svg/tools/shopware.svg)
-
-![icon](assets/svg/tools/wordpress.svg)
-
-![icon](assets/svg/tools/symfony.svg)
-
-![icon](assets/svg/tools/vue.svg)
-
-![icon](assets/svg/tools/nodejs.svg)
-
-![icon](assets/svg/tools/jquery.svg)
-
-![icon](assets/svg/tools/sass.svg)
-
-![icon](assets/svg/tools/npm.svg)
-
-![icon](assets/svg/tools/composer.svg)
-
-![icon](assets/svg/tools/phpstorm.svg)
-
-![icon](assets/svg/tools/git.svg)
+![Luca Visciola - Resume footer](assets/images/luca-visciola-resume-footer.png)
