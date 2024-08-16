@@ -236,21 +236,18 @@
      * @param isBackendTheme
      */
     function toggleTheme(isBackendTheme) {
-        // Show the loader and loader background
-        $('.loader').show();
         $('.loader-background').show();
+
+        $("#frontendTheme").prop("disabled", isBackendTheme);
+        $("#backendTheme").prop("disabled", !isBackendTheme);
+        $('.backend-elements').toggle(isBackendTheme);
+        $('.frontend-elements').toggle(!isBackendTheme);
 
         // Use setTimeout to create a delay
         setTimeout(function() {
-            $("#frontendTheme").prop("disabled", isBackendTheme);
-            $("#backendTheme").prop("disabled", !isBackendTheme);
-            $('.backend-elements').toggle(isBackendTheme);
-            $('.frontend-elements').toggle(!isBackendTheme);
-
             // Hide the loader and loader background
-            $('.loader').hide();
             $('.loader-background').hide();
-        }, 1000); // Delay in milliseconds
+        }, 500); // Delay in milliseconds
     }
 
     MELASISTEMA.switchMode = function() {
