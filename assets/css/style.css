@@ -1,23 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 
+:root {
+    --yellow: #c9a700;
+    --orange: #ef762e;
+    --purple: #8e35be;
+}
 
+.yellow {
+    color: var(--yellow);
+}
+.orange {
+    color: var(--orange);
+}
 
+.purple {
+    color: var(--purple);
+}
 
+.loader-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.9; /* Adjust as needed */
+    z-index: 9998; /* Ensure the background is below the loader but above other elements */
+    display: none;
+}
 
+.loader-text {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em; /* Adjust as needed */
+    z-index: 9999; /* Ensure the text is above the loader background */
+}
+
+.chooser-wrapper {
+    padding: 50px 20px 50px 20px;
+}
 
 /**
 General Style
     Structure
  */
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: baseline;
 }
 .left-column {
     flex: 1 1 auto;
@@ -34,7 +72,6 @@ body {
 .right-column {
     flex: 3 1 auto;
     max-width: 475px;
-    border-left: 3px solid black;
     padding-left:50px;
 }
 @media (max-width: 1023px) {
@@ -46,6 +83,7 @@ body {
         margin-top: 40px;
     }
 }
+
 /**
 General Style
     Typography
@@ -86,227 +124,87 @@ General Style
     filter: blur(4px);
 }
 
-/**
-Elements
-    Separator
- */
-.separator {
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    margin: 7px 0px 7px 0px;
-}
-.separator.keep-right {
-    float: right;
-    width: 50px;
-    margin-inline-start: 30px;
-    margin-inline-end: 0px;
-}
-.separator.keep-left {
-    width: 50px;
-    margin-inline-start: 0px;
-    margin-inline-end: 30px;
-}
 
-/**
-Elements
-    Slider
- */
-.slider-wrapper {
+/* The switch - the box around the slider */
+.switch-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom:20px;
 }
-.slider {
-    width: 200px;
-    height: 7px;
-    background-color: #ccc;
+.switch-wrapper p {
+    margin: unset;
+    padding: unset;
+}
+
+.switch-wrapper p.frontend-option {
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.switch-wrapper p.backend-option {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.switch-toggle {
     position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0px 10px 0px 10px;
 }
-.track {
-    height: 100%;
-    border-radius: 5px;
-    background: linear-gradient(to right, #333, #000, #333); /* Adjust colors as needed */
+
+/* Hide default HTML checkbox */
+.switch-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
-.handle {
+
+/* The slider */
+.slider-toggle {
     position: absolute;
-    top: -7px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid #545252;
     cursor: pointer;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
-    background: radial-gradient(circle at top, rgb(80, 80, 80), #1c1c1c);
-}
-.slider.slider-php .handle {
-    left: 85%;
-}
-.slider.slider-html5 .handle {
-    left: 85%;
-}
-.slider.slider-css3 .handle {
-    left: 70%;
-}
-.slider.slider-js .handle {
-    left: 75%;
-}
-.slider.slider-shopware .handle {
-    left: 87%;
-}
-.slider.slider-laravel .handle {
-    left: 78%;
-}
-.slider.slider-wordpress .handle {
-    left: 90%;
-}
-.slider-wrapper h3 {
-    margin-top: unset;
-    font-size: 1.2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-/**
-Content Style
- */
-.content-wrapper {
+.slider-toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
     background-color: white;
-    padding: 100px 80px 100px 80px;
-    display: flex;
-    justify-content: space-around;
-    margin: 40px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
-    min-height: 1280px;
-    max-width: 900px;
-}
-@media (max-width: 1023px) {
-    .content-wrapper {
-        display: block;
-        width: unset;
-        margin:unset;
-        padding: 50px 20px 50px 20px;
-    }
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-/**
-Content Style
-    General
- */
-.icon img {
-    width: 30px;
-    margin-left:25px;
-    filter: drop-shadow(0 2px 2px rgba(86, 86, 86, 0.2));
+input:checked + .slider-toggle {
+    background-color: var(--orange);
 }
 
-/**
-Content Style
-    Resume Heading
- */
-.resume-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    text-align: right;
-
-}
-h1.resume-name {
-    font-size: 4rem;
-}
-h3.resume-job-position-two {
-    margin-top: 3px;
-    font-weight: 400;
-    text-shadow: none;
+input:focus + .slider-toggle {
+    box-shadow: 0 0 1px var(--orange);
 }
 
-/**
-Content Style
-    Resume Personal Info
- */
-.resume-personal-info {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    text-align: right;
-    margin-top:50px;
-
-}
-.resume-personal-info p {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin: 0px 0px 10px 0px;
+input:checked + .slider-toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
-/**
-Content Style
-    About Me
- */
-.resume-about-me {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-
-}
-.resume-about-me p {
-    font-weight: 300;
+/* Rounded slider-toggles */
+.slider-toggle.round {
+    border-radius: 34px;
 }
 
-/**
-Content Style
-    Tools and languages
- */
-.tools-group,
-.languages-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.tools-group>* {
-    flex: 1 1 50px;
-}
-.tools-group .tool-icon img,
-.languages-group .language-icon img {
-    width: 50px;
-    margin-bottom:1em;
-    filter: drop-shadow(0 2px 2px rgba(86, 86, 86, 0.2));
-}
-
-@media (max-width: 1023px) {
-    .resume-tools .tools-group {
-        margin-top:2em;
-    }
-}
-
-/**
-Content Style
-    Who i am
- */
-.resume-who-am-i p {
-    font-weight: 300;
-}
-
-/**
-Content Style
-    Experience
- */
-.experience-group {}
-.experience-group .experience-group-heading p {
-    font-size:1.2rem;
-}
-.experience-sub-group {
-    padding-left:25px;
-}
-.experience-sub-group p {
-    font-size: 0.8rem;
-}
-
-/**
-Content Style
-    Education
- */
-.education-group p:not(.education-heading) {
-    font-size: 0.8rem;
+.slider-toggle.round:before {
+    border-radius: 50%;
 }

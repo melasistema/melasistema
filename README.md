@@ -65,4 +65,6 @@ A suo agio nella gestione di situazioni critiche.
 </tr>
 </table>
 
+![](https://komarev.com/ghpvc/?username=melasistema&label=++PASSED+BY+VISITORS++)
+
 ![Luca Visciola - Resume footer](assets/images/luca-visciola-resume-footer.png)
