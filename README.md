@@ -1,4 +1,4 @@
-﻿![Luca Visciola - Resume header](assets/images/luca-visciola-resume-header.png)
+﻿![Luca Visciola - Resume header](assets/images/luca-visciola-resume-header-split.png)
 
 LUCA VISCIOLA
 =============
