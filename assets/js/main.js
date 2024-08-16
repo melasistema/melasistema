@@ -235,13 +235,6 @@
      *
      * @param isBackendTheme
      */
-    /*function toggleTheme(isBackendTheme) {
-        $("#frontendTheme").prop("disabled", isBackendTheme);
-        $("#backendTheme").prop("disabled", !isBackendTheme);
-        $('.backend-elements').toggle(isBackendTheme);
-        $('.frontend-elements').toggle(!isBackendTheme);
-    }*/
-
     function toggleTheme(isBackendTheme) {
         // Show the loader and loader background
         $('.loader').show();
@@ -516,9 +509,7 @@
 
     // Window Load functions
     window.onload = function () {
-        const savedTheme = localStorage.getItem('theme');
-        const isBackendTheme = savedTheme === 'backend';
-        toggleTheme(isBackendTheme);
+        //
     }
 
 })( jQuery );
