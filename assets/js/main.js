@@ -250,7 +250,7 @@
             // Hide the loader and loader background
             $('.loader').hide();
             $('.loader-background').hide();
-        }, 500); // Delay in milliseconds
+        }, 1000); // Delay in milliseconds
     }
 
     MELASISTEMA.switchMode = function() {
