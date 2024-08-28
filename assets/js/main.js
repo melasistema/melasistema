@@ -34,6 +34,10 @@
                 "url": "mailto:info@melasistema.com",
             },
             "social_media": {
+                "website": {
+                  "url": "https://lucavisciola.com",
+                  "text": "lucavisciola.com",
+                },
                 "linkedin": {
                     "url": "https://www.linkedin.com/in/luca-visciola/",
                     "text": "luca-visciola"
@@ -287,14 +291,17 @@
         $('p.email a').attr('href', jsonData.personal_info.email.url).text(jsonData.personal_info.email.text);
         // Set social media links
         const socialMediaLinks = jsonData.personal_info.social_media;
+        $('p.website a').attr('href', socialMediaLinks.website.url).text(socialMediaLinks.website.text);
         $('p.linkedin a').attr('href', socialMediaLinks.linkedin.url).text(socialMediaLinks.linkedin.text);
         $('p.github a').attr('href', socialMediaLinks.github.url).text(socialMediaLinks.github.text);
         // Backend Personal info
         $('span.birthday').prepend(jsonData.personal_info.birthdate + ' ');
         $('span.location').prepend(jsonData.personal_info.location + ' ');
         $('span.email a').attr('href', jsonData.personal_info.email.url).text(jsonData.personal_info.email.text);
+        $('span.website a').attr('href', socialMediaLinks.website.url).text(socialMediaLinks.website.text);
         $('span.linkedin a').attr('href', socialMediaLinks.linkedin.url).text(socialMediaLinks.linkedin.text);
         $('span.github a').attr('href', socialMediaLinks.github.url).text(socialMediaLinks.github.text);
+
 
         // Other Saying
         // Frontend Heading
