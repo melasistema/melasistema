@@ -10,6 +10,7 @@ LUCA VISCIOLA
 
 <table style="border:none">
   <tr style="border: none!important;">
+    <td style="border: none!important;"><a href="https://lucavisciola.com"><img src="assets/svg/globe.svg" alt="icon" width="30px"></a></td>
     <td style="border: none!important;"><a href="mailto:info@melasistema.com"><img src="assets/svg/mail.svg" alt="icon" width="30px"></a></td>
     <td style="border: none!important;"><a href="https://www.linkedin.com/in/luca-visciola/"><img src="assets/svg/linkedin.svg" alt="icon" width="30px"></a></td>
     <td style="border: none!important;"><a href="https://github.com/melasistema"><img src="assets/svg/github.svg" alt="icon" width="30px"></a></td>
