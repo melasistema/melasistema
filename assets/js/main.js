@@ -148,6 +148,16 @@
                             ]
                         }
                     ]
+                },
+                "activision": {
+                    "heading": "<b>(2007 - 2008)</b>  @ <b>Activision Blizzard</b> - Dublin (IRE)",
+                    "sub_groups": [
+                        {
+                            "roles": [
+                                "QA Tester for Call of Duty World at War, Guitar Hero Metallica and others."
+                            ]
+                        }
+                    ]
                 }
             }
         },
@@ -329,6 +339,7 @@
         // Experiences
         $('p.group-melasistema-heading').prepend(jsonData.experience.groups.melasistema.heading);
         $('p.group-radionbc-heading').prepend(jsonData.experience.groups.radionbc.heading);
+        $('p.group-activision-heading').prepend(jsonData.experience.groups.activision.heading);
         jsonData.experience.groups.melasistema.sub_groups.forEach(function(job) {
             // Create a new experience-sub-group element
             const experienceSubGroup = document.createElement('div');
@@ -436,6 +447,64 @@
             // Append the experience sub-group to the main container
             document.querySelector('.experience-group-radionbc.backend-elements').appendChild(experienceSubGroup);
         });
+
+
+
+
+
+        jsonData.experience.groups.activision.sub_groups.forEach(function(job) {
+            // Create a new experience-sub-group element
+            const experienceSubGroup = document.createElement('div');
+            experienceSubGroup.classList.add('experience-sub-group');
+
+
+            // Create a new unordered list element for the roles
+            const roleList = document.createElement('ul');
+
+            // Loop through each role in the "roles" array
+            job.roles.forEach(function(role) {
+                // Create a new list item element for the current role
+                const roleListItem = document.createElement('li');
+                roleListItem.textContent = role;
+
+                // Add the list item to the role list
+                roleList.appendChild(roleListItem);
+            });
+
+            // Add the role list to the experience sub-group
+            experienceSubGroup.appendChild(roleList);
+
+            // Append the experience sub-group to the main container
+            document.querySelector('.experience-group-activision').appendChild(experienceSubGroup);
+        });
+        // Backend
+        jsonData.experience.groups.activision.sub_groups.forEach(function(job) {
+            // Create a new experience-sub-group element
+            const experienceSubGroup = document.createElement('div');
+            experienceSubGroup.classList.add('experience-sub-group');
+
+            // Create a new unordered list element for the roles
+            const roleList = document.createElement('ul');
+
+            // Loop through each role in the "roles" array
+            job.roles.forEach(function(role) {
+                // Create a new list item element for the current role
+                const roleListItem = document.createElement('li');
+                roleListItem.textContent = role;
+
+                // Add the list item to the role list
+                roleList.appendChild(roleListItem);
+            });
+
+            // Add the role list to the experience sub-group
+            experienceSubGroup.appendChild(roleList);
+
+            // Append the experience sub-group to the main container
+            document.querySelector('.experience-group-activision.backend-elements').appendChild(experienceSubGroup);
+        });
+
+
+
 
         // Education
         $('h3.education-heading').text(jsonData.education.heading);
