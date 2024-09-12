@@ -154,7 +154,7 @@
                     "sub_groups": [
                         {
                             "roles": [
-                                "QA Tester for Call of Duty World at War, Guitar Hero Metallica and others."
+                                "Localization QA Tester for Call of Duty World at War, Guitar Hero Metallica and others."
                             ]
                         }
                     ]
