@@ -40,9 +40,15 @@ Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda 
     <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/frontend.css" id="frontendTheme">
-    <link rel="stylesheet" href="./assets/css/backend.css" id="backendTheme" disabled>
+    <script src="config.js"></script>
+    <script>
+        const version = config.version;
+        document.write(`
+            <link rel="stylesheet" href="./assets/css/style.css?v=${version}">
+            <link rel="stylesheet" href="./assets/css/frontend.css?v=${version}" id="frontendTheme">
+            <link rel="stylesheet" href="./assets/css/backend.css?v=${version}" id="backendTheme" disabled>
+        `);
+    </script>
 
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -454,7 +460,12 @@ Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda 
         <!-- footer end -->
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script>
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = `assets/js/main.js?v=${version}`;
+            document.body.appendChild(script);
+        </script>
 
     </body>
 
