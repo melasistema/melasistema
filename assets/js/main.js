@@ -77,7 +77,7 @@
                     "heading": "<b>(2009 - presente)</b>  @ <b><a href=\"https://melasistema.com\" target=\"_blank\">Melasistema</a></b> - Laives (BZ)",
                     "sub_groups": [
                         {
-                            "text": "<p><b>(2022 - presente)</b> @ <b><a href=\"https://functionalcompany.com\" target=\"_blank\">Functional Srl</a></b> | Bolzano (BZ)</p>",
+                            "text": "<p><b>(2022 - 2024)</b> @ <b><a href=\"https://functionalcompany.com\" target=\"_blank\">Functional Srl</a></b> | Bolzano (BZ)</p>",
                             "roles": [
                                 "Shopware based platforms developer",
                                 "ERP Connector developer",
