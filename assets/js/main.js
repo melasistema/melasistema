@@ -79,59 +79,59 @@
                         {
                             "text": "<p><b>(2022 - 2024)</b> @ <b><a href=\"https://functionalcompany.com\" target=\"_blank\">Functional Srl</a></b> | Bolzano (BZ)</p>",
                             "roles": [
-                                "Shopware based platforms developer",
-                                "ERP Connector developer",
-                                "Laravel micro services developer",
-                                "Wordpress developer"
+                                "Shopware Platform Developer per soluzioni e-commerce personalizzate",
+                                "ERP Connector Developer per l'integrazione di sistemi gestionali",
+                                "Laravel Microservices Developer per applicazioni scalabili e modulari",
+                                "WordPress Developer per la creazione e gestione di siti dinamici",
                             ]
                         },
                         {
                             "text": "<p><b>(2021 - 2022)</b> @ <b>Aliante Money Srl</b> | Salerno (SA)</p>",
                             "roles": [
-                                "API’s Engineering per servizi di comunicazione con istituti bancari",
-                                "Microservices developer per gestionali aziendali e servizi interni",
-                                "Admin dashboard developer per gestione API’s e Microservices",
-                                "Frontend developer multi-role",
-                                "Technology Consultant"
+                                "API Engineer per l’integrazione con istituti bancari",
+                                "Microservices Developer per gestionali e servizi interni",
+                                "Admin Dashboard Developer per la gestione di API e microservizi",
+                                "Frontend Developer con competenze trasversali",
+                                "Technology Consultant",
                             ]
                         },
                         {
                             "text": "<p><b>(2020 - 2022)</b> @ <b>EOC Srl </b> | Laives (BZ)</p>",
                             "roles": [
-                                "Wordpress developer",
-                                "Woocommerce developer",
-                                "Wordpress plugin developer",
-                                "Technology consultant per l’azienda e clienti"
+                                "WordPress Developer per siti web e soluzioni personalizzate",
+                                "WooCommerce Developer per e-commerce avanzati",
+                                "WordPress Plugin Developer per estensioni su misura",
+                                "Technology Consultant per l’innovazione e l’ottimizzazione tecnologica di progetti aziendali e clienti",
                             ]
                         },
                         {
                             "text": "<p><b>(2019 - 2020)</b> @ <b>Goodify Società Benefit </b> | Bolzano (BZ)</p>",
                             "roles": [
-                                "Developer’s team coordinator",
-                                "API’s integrator",
-                                "CRM Integrator",
-                                "Marketing Automation integrator",
-                                "Graphics visualizer for print and digital"
+                                "Team Coordinator per la gestione e il supporto degli sviluppatori",
+                                "API Integrator per soluzioni connesse e scalabili",
+                                "CRM Integrator per la gestione e automazione dei dati aziendali",
+                                "Marketing Automation Specialist per l’integrazione di flussi automatizzati",
+                                "Graphic Visualizer per progetti digitali e stampa",
                             ]
                         },
                         {
                             "text": "<p><b>(2017 - 2019)</b> @ <b>Tooly Tips Srl </b> | Bolzano (BZ)</p>",
                             "roles": [
-                                "Backend developer",
-                                "Frontend developer",
-                                "Services and customer panels developer",
-                                "Ticketing System developer",
-                                "Funneling and lead generator system developer",
-                                "API’s integrator",
-                                "Technology Consultant"
+                                "Backend Developer per infrastrutture scalabili nel settore travel-tech",
+                                "Frontend Developer per un'esperienza utente intuitiva e accessibile",
+                                "Customer & Service Panel Developer per albergatori e resort manager",
+                                "Ticketing System Developer per la monetizzazione innovativa dei lead B2B",
+                                "Lead Generation & Funnel Developer per connessioni ad alto tasso di conversione",
+                                "API Integrator per l’interoperabilità tra software gestionali e strutture turistiche",
+                                "Technology Consultant per la digitalizzazione e ottimizzazione delle soluzioni travel",
                             ]
                         },
                         {
                             "text": "<p><b>(2009 - presente)</b> @ <b>Melasistema </b> | Laives (BZ)</p>",
                             "roles": [
-                                "Custom web solutions and software developer",
-                                "2D/3D Graphics designer & animator",
-                                "Sound and Video editor"
+                                "Custom Web & Software Developer per soluzioni su misura",
+                                "2D/3D Graphic Designer & Animator per contenuti visivi dinamici",
+                                "Sound & Video Editor per produzioni multimediali professionali",
                             ]
                         },
                     ]
@@ -141,10 +141,10 @@
                     "sub_groups": [
                         {
                             "roles": [
-                                "Sincronizzazione flussi radiofonici su piattaforme web",
-                                "Audio/Video Conversion/Publishing system developer",
-                                "Backend developer",
-                                "API’s integrator"
+                                "Radio Streaming Coordinator per la sincronizzazione dei flussi su piattaforme web",
+                                "Audio/Video Conversion & Publishing Developer per la distribuzione multimediale",
+                                "Backend Developer per l’infrastruttura e la gestione dei dati",
+                                "API Integrator per l’interoperabilità tra sistemi e servizi radiofonici",
                             ]
                         }
                     ]
@@ -154,7 +154,7 @@
                     "sub_groups": [
                         {
                             "roles": [
-                                "Localization QA Tester for Call of Duty World at War, Guitar Hero Metallica and others."
+                                "Localization QA Tester for Call of Duty: World at War, Guitar Hero: Metallica, and other titles",
                             ]
                         }
                     ]
