@@ -77,6 +77,12 @@
                     "heading": "<b>(2009 - presente)</b>  @ <b><a href=\"https://melasistema.com\" target=\"_blank\">Melasistema</a></b> - Laives (BZ)",
                     "sub_groups": [
                         {
+                            "text": "<p><b>(2025)</b> @ <b><a href=\"https://codeworks.build\" target=\"_blank\">Codeworks</a></b> | Bolzano (BZ)</p>",
+                            "roles": [
+                                "QA Developer",
+                            ]
+                        },
+                        {
                             "text": "<p><b>(2022 - 2024)</b> @ <b><a href=\"https://functionalcompany.com\" target=\"_blank\">Functional Srl</a></b> | Bolzano (BZ)</p>",
                             "roles": [
                                 "Shopware Platform Developer per soluzioni e-commerce personalizzate",
