@@ -79,7 +79,7 @@
                         {
                             "text": "<p><b>(2025)</b> @ <b><a href=\"https://codeworks.build\" target=\"_blank\">Codeworks</a></b> | Bolzano (BZ)</p>",
                             "roles": [
-                                "QA Developer",
+                                "QA Developer, focused on creating processes and practices to ensure high-quality products through both proactive and reactive activities.",
                             ]
                         },
                         {
