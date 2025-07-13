@@ -73,6 +73,17 @@
         },
         "experience": {
             "groups": {
+                "metaesse": {
+                    "heading": "<b>(2025)</b>  @ <b>Metaesse Srl</b> - Bolzano (BZ)",
+                    "sub_groups": [
+                        {
+                            "roles": [
+                                "Full Stack Developer",
+                                "QA Developer, focused on creating processes and practices to ensure high-quality products through both proactive and reactive activities.",
+                            ]
+                        }
+                    ]
+                },
                 "melasistema": {
                     "heading": "<b>(2009 - presente)</b>  @ <b><a href=\"https://melasistema.com\" target=\"_blank\">Melasistema</a></b> - Laives (BZ)",
                     "sub_groups": [
@@ -343,172 +354,43 @@
         $('span.who-i-am-text').text(jsonData.who_i_am.text);
 
         // Experiences
-        $('p.group-melasistema-heading').prepend(jsonData.experience.groups.melasistema.heading);
-        $('p.group-radionbc-heading').prepend(jsonData.experience.groups.radionbc.heading);
-        $('p.group-activision-heading').prepend(jsonData.experience.groups.activision.heading);
-        jsonData.experience.groups.melasistema.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
+        $('h3.experience-heading').text('ESPERIENZE');
 
-            // Add the company information from the "text" property
-            experienceSubGroup.innerHTML = job.text;
+        // Reusable function to create and append experience groups
+        function createExperienceGroup(groupKey, containerSelector) {
+            const groupData = jsonData.experience.groups[groupKey];
+            const container = $(containerSelector);
 
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
+            if (groupData && container.length) {
+                const heading = container.find('.experience-group-heading');
+                heading.html(`<p class="group-${groupKey}-heading">${groupData.heading}</p>`);
 
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
+                groupData.sub_groups.forEach(function(job) {
+                    const subGroup = $('<div class="experience-sub-group"></div>');
+                    if (job.text) {
+                        subGroup.append(job.text);
+                    }
+                    const roleList = $('<ul></ul>');
+                    job.roles.forEach(function(role) {
+                        roleList.append(`<li>${role}</li>`);
+                    });
+                    subGroup.append(roleList);
+                    container.append(subGroup);
+                });
+            }
+        }
 
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
+        // Frontend
+        createExperienceGroup('metaesse', '.experience-group-metaesse.frontend-elements');
+        createExperienceGroup('melasistema', '.experience-group-melasistema.frontend-elements');
+        createExperienceGroup('radionbc', '.experience-group-radionbc.frontend-elements');
+        createExperienceGroup('activision', '.experience-group-activision.frontend-elements');
 
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-melasistema.frontend-elements').appendChild(experienceSubGroup);
-        });
         // Backend
-        jsonData.experience.groups.melasistema.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
-
-            // Add the company information from the "text" property
-            experienceSubGroup.innerHTML = job.text;
-
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
-
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
-
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
-
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-melasistema.backend-elements').appendChild(experienceSubGroup);
-
-        });
-
-        jsonData.experience.groups.radionbc.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
-
-
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
-
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
-
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
-
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-radionbc').appendChild(experienceSubGroup);
-        });
-        // Backend
-        jsonData.experience.groups.radionbc.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
-
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
-
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
-
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
-
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-radionbc.backend-elements').appendChild(experienceSubGroup);
-        });
-
-
-
-
-
-        jsonData.experience.groups.activision.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
-
-
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
-
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
-
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
-
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-activision').appendChild(experienceSubGroup);
-        });
-        // Backend
-        jsonData.experience.groups.activision.sub_groups.forEach(function(job) {
-            // Create a new experience-sub-group element
-            const experienceSubGroup = document.createElement('div');
-            experienceSubGroup.classList.add('experience-sub-group');
-
-            // Create a new unordered list element for the roles
-            const roleList = document.createElement('ul');
-
-            // Loop through each role in the "roles" array
-            job.roles.forEach(function(role) {
-                // Create a new list item element for the current role
-                const roleListItem = document.createElement('li');
-                roleListItem.textContent = role;
-
-                // Add the list item to the role list
-                roleList.appendChild(roleListItem);
-            });
-
-            // Add the role list to the experience sub-group
-            experienceSubGroup.appendChild(roleList);
-
-            // Append the experience sub-group to the main container
-            document.querySelector('.experience-group-activision.backend-elements').appendChild(experienceSubGroup);
-        });
-
+        createExperienceGroup('metaesse', '.experience-group-metaesse.backend-elements');
+        createExperienceGroup('melasistema', '.experience-group-melasistema.backend-elements');
+        createExperienceGroup('radionbc', '.experience-group-radionbc.backend-elements');
+        createExperienceGroup('activision', '.experience-group-activision.backend-elements');
 
 
 
