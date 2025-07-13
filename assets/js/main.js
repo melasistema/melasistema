@@ -74,7 +74,7 @@
         "experience": {
             "groups": {
                 "metaesse": {
-                    "heading": "<b>(2025)</b>  @ <b>Metaesse Srl</b> - Bolzano (BZ)",
+                    "heading": "<b>(2025 - presente)</b>  @ <b>Metaesse Srl</b> - Bolzano (BZ)",
                     "sub_groups": [
                         {
                             "roles": [
