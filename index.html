@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en" data-mode="human">
 
-    <head itemscope itemtype="http://schema.org/WebSite">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
+    <!-- Source of truth for versioning: bump here and in the ?v= query strings below -->
+    <meta name="version" content="2.0.0">
 
     <title>Luca Visciola - Resume</title>
 
     <meta name="author" content="Luca Visciola">
-    <meta name="keywords" content="Luca Visciola, Full Stack Developer, Technology Consultant, resume, cv, curriculum, curriculum vitae">
-    <meta name="description" content="Luca Visciola - Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti.
-Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.">
-
-    <meta itemprop="name" content="Luca Visciola - Full Stack Developer - Resume">
-    <meta itemprop="description" content="Luca Visciola - Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti.
-Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.">
-    <meta itemprop="image" content="">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Project">
+    <meta name="keywords" content="Luca Visciola, Full Stack Developer, Technology Consultant, local-first AI, resume, cv">
+    <meta name="description" content="Luca Visciola - Full Stack Developer & Technology Consultant. Building for the web since 2009; these days, software that runs on your own silicon.">
 
     <meta property="og:url" content="https://resume.lucavisciola.com">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Luca Visciola - Full Stack Developer - Resume">
-    <meta property="og:image" content="">
-    <meta property="og:description" content="Luca Visciola - Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti.
-Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura.">
-    <meta property="og:site_name" content="Luca Visciola - Full Stack Developer - Resume">
+    <meta property="og:title" content="Luca Visciola - Full Stack Developer & Technology Consultant">
+    <meta property="og:description" content="Building for the web since 2009; these days, software that runs on your own silicon. Available in Human mode and Machine mode.">
+    <meta property="og:site_name" content="Luca Visciola - Resume">
+    <meta property="og:image" content="https://resume.lucavisciola.com/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="alternate" type="application/json" href="resume.json" title="Resume (JSON Resume)">
+    <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
 
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -40,443 +32,124 @@ Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda 
     <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:wght@300..700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.0.0">
+
+    <!-- Pick the mode before first paint: saved choice, else follow the OS theme -->
     <script>
-        const version = '1.1.3';
-        document.write(`
-            <link rel="stylesheet" href="./assets/css/style.css?v=${version}">
-            <link rel="stylesheet" href="./assets/css/frontend.css?v=${version}" id="frontendTheme">
-            <link rel="stylesheet" href="./assets/css/backend.css?v=${version}" id="backendTheme" disabled>
-        `);
+        (function () {
+            let mode = null;
+            try { mode = localStorage.getItem('mode'); } catch (e) {}
+            if (mode !== 'human' && mode !== 'machine') {
+                mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'machine' : 'human';
+            }
+            document.documentElement.dataset.mode = mode;
+        })();
     </script>
-
-    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
 
-    <body itemscope itemtype="http://schema.org/WebPage">
+<body>
 
-        <div class="loader-background">
-            <div class="loader-text">...setting up things &#128540;</div>
+    <div class="loader" role="status" aria-live="polite">
+        <div class="loader-text">...setting up things &#128540;</div>
+    </div>
+
+    <main>
+
+        <div class="chooser">
+            <p class="description">The duality is only apparent...<br>Taking one side or the other won't work:</p>
+
+            <div class="switch">
+                <span class="switch-human">Human mode</span>
+                <label class="switch-toggle">
+                    <input type="checkbox" aria-label="Machine mode">
+                    <span class="switch-slider"></span>
+                </label>
+                <span class="switch-machine"><span class="yellow">exec</span>(<span class="purple">$machine_mode</span>)</span>
+            </div>
         </div>
-        <!-- header -->
-        <header itemscope itemtype="http://schema.org/WebSite">
 
-        </header>
-        <!-- header end -->
+        <!-- Human mode: rendered from resume.json by assets/js/main.js -->
+        <article class="paper human-only" id="human">
 
-        <main role="main">
+            <section class="left-column">
+                <header class="resume-heading">
+                    <h1 data-bind="name"></h1>
+                    <h2 data-bind="label"></h2>
+                    <hr class="separator keep-right">
+                </header>
 
-            <div class="chooser-wrapper">
-                <p class="description">La dualità è solo apparente...<br> Schierandoti dall'una o dall'altra non funzionerà:</p>
+                <ul class="contacts" id="contacts"></ul>
 
-                <div class="switch-wrapper mt-2em">
-
-                    <p class="frontend-option">Frontend Mode</p>
-
-                    <label class="switch-toggle">
-                        <input type="checkbox">
-                        <span class="slider-toggle round"></span>
-                    </label>
-
-                    <p class="backend-option"><span class="yellow">exec</span>(<span class="purple">$backend_mode</span>)</p>
-
-                </div>
-            </div>
-
-
-            <div class="content-wrapper">
-
-                <section class="left-column">
-
-                    <div class="resume-heading frontend-elements">
-                        <h1 class="resume-name"></h1>
-                        <h2 class="resume-job-position-one"></h2>
-                        <h3 class="resume-job-position-two"></h3>
-                    </div>
-                    <div class="resume-heading backend-elements">
-                        <p><span class="function orange">public function</span> <span class="function yellow">showResumeHeading</span>() {<br>
-                                <span class="resume-name-backend"></span><br>
-                                <span class="resume-job-position-one-backend"></span><br>
-                                <span class="resume-job-position-two-backend"></span>
-                            <br><span class="float-left">}</span>
-                        </p>
-                    </div>
-
-                    <hr class="separator keep-right frontend-elements">
-                    <p class="backend-elements keep-right">-------------------------------</p>
-
-                    <div class="resume-personal-info frontend-elements mt-2em">
-                        <p class="birthday"><span class="icon"><img src="assets/svg/smile.svg" alt="icon"></span></p>
-                        <p class="location"><span class="icon"><img src="assets/svg/map.svg" alt="icon"></span></p>
-                        <p class="phone">
-                            <span class="blurry-out"></span>
-                            <span class="icon"><img src="assets/svg/phone.svg" alt="icon"></span>
-                        </p>
-                        <p class="email"><a href="javascript:void(0)"></a> <span class="icon" alt="icon"><img src="assets/svg/mail.svg"></span></p>
-                        <p class="website"><a href="javascript:void(0)" target="_blank"></a> <span class="icon" alt="icon"><img src="assets/svg/globe.svg"></span></p>
-                        <p class="linkedin"><a href="javascript:void(0)" target="_blank"></a> <span class="icon" alt="icon"><img src="assets/svg/linkedin.svg"></span></p>
-                        <p class="github"><a href="javascript:void(0)" target="_blank"></a> <span class="icon" alt="icon"><img src="assets/svg/github.svg"></span></p>
-                    </div>
-                    <div class="resume-personal-info backend-elements mt-2em">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showPersonalInfo</span>() {<br>
-                            <span class="birthday"></span><br>
-                            <span class="location"></span><br>
-                            <span class="email"><a href="javascript:void(0)"></a></span><br>
-                            <span class="website"><a href="javascript:void(0)"></a></span><br>
-                            <span class="linkedin"><a href="javascript:void(0)"></a></span><br>
-                            <span class="github"><a href="javascript:void(0)"></a></span><br>
-                            <br><span class="float-left">}</span>
-                        </p>
-
-                    </div>
-
-                    <div class="resume-about-me frontend-elements mt-2em">
-                        <h3 class="about-me-heading"></h3>
-                        <hr  class="separator keep-left">
-                        <p class="about-me-text"></p>
-                    </div>
-                    <div class="resume-about-me backend-elements mt-2em">
-                        <p><span class="function orange">public function</span> <span class="function yellow">showOtherSaying</span>() {<br>
-                            <span class="about-me-text"></span>
-                            <br><span class="closing-brackets float-left">}</span>
-                        </p>
-                    </div>
-                    <p class="backend-elements keep-right">-------------------------------</p>
-
-                    <div class="resume-know-how frontend-elements mt-2em">
-                        <h3 class="competencies-heading"></h3>
-                        <hr  class="separator keep-left">
-                        <div class="slider-group mt-2em">
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-php"></h3>
-                                <div class="slider slider-php">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-html5"></h3>
-                                <div class="slider slider-html5">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-css3"></h3>
-                                <div class="slider slider-css3">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-js"></h3>
-                                <div class="slider slider-js">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-shopware"></h3>
-                                <div class="slider slider-shopware">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-laravel"></h3>
-                                <div class="slider slider-laravel">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                            <div class="slider-wrapper">
-                                <h3 class="competencies-wordpress"></h3>
-                                <div class="slider slider-wordpress">
-                                    <div class="track"></div>
-                                    <div class="handle"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="languages-group mt-2em">
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/php.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/mysql.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/html5.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/css-3.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/javascript.svg" alt="icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-know-how backend-elements">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showCompetencies</span>() {<br>
-
-                            <span>PHP => 92%</span><br>
-                            <span>HTML => 92%</span><br>
-                            <span>CSS3 => 75%</span><br>
-                            <span>JS => 81%</span><br>
-                            <span>Shopware => 94%</span><br>
-                            <span>Laravel => 84%</span><br>
-                            <span>Wordpress => 100%</span><br>
-
-                        <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-                        <div class="languages-group frontend-elements mt-2em">
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/php.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/mysql.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/html5.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/css-3.svg" alt="icon">
-                            </div>
-                            <div class="language-icon">
-                                <img src="assets/svg/tools/javascript.svg" alt="icon">
-                            </div>
-                        </div>
-                        <div class="languages-group backend-elements mt-2em">
-
-                            <p><span class="function orange">public function</span> <span class="function yellow">showLanguagesIcons</span>() {<br>
-                                <span class="competencies-heading"></span>
-
-                                <span>$php_icon</span><br>
-                                <span>$mysql_icon</span><br>
-                                <span>$html5_icon</span><br>
-                                <span>$css3_icon</span><br>
-                                <span>$javascript_icon</span><br>
-
-                                <br><span class="closing-brackets float-left">}</span>
-                            </p>
-
-                        </div>
-                    </div>
-                    <p class="backend-elements keep-right">-------------------------------</p>
-
-                    <div class="resume-tools frontend-elements mt-2em">
-                        <h3 class="tools-heading"></h3>
-                        <hr  class="separator keep-left">
-                        <div class="tools-group mt-2em">
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/laravel.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/shopware.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/wordpress.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/symfony.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/vue.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/nodejs.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/jquery.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/sass.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/npm.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/composer.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/phpstorm.svg" alt="icon">
-                            </div>
-                            <div class="tool-icon">
-                                <img src="assets/svg/tools/git.svg" alt="icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-tools backend-elements mt-2em">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showMostUsedTools</span>() {<br>
-
-
-                            <span>$laravel_icon</span><br>
-                            <span>$shopware_icon</span><br>
-                            <span>$wordpress_icon</span><br>
-                            <span>$symfony_icon</span><br>
-                            <span>$vue_icon</span><br>
-                            <span>$nodejs_icon</span><br>
-                            <span>$jquery_icon</span><br>
-                            <span>$sass_icon</span><br>
-                            <span>$npm_icon</span><br>
-                            <span>$composer_icon</span><br>
-                            <span>$phpstorm_icon</span><br>
-                            <span>$git_icon</span><br>
-
-                            <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-
-                    </div>
-
+                <section>
+                    <h3>What they say</h3>
+                    <hr class="separator">
+                    <p class="quote" data-bind="reference"></p>
                 </section>
 
-                <section class="right-column">
-
-                    <div class="resume-who-i-am frontend-elements">
-                        <h3 class="who-i-am-heading"></h3>
-                        <hr  class="separator keep-left">
-                        <p class="who-i-am-text"></p>
-                    </div>
-                    <div class="resume-who-i-am backend-elements">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showAboutMe</span>() {<br>
-                            <span class="who-i-am-text"></span>
-                            <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-                    </div>
-                    <p class="backend-elements keep-right">-------------------------------</p>
-
-                    <div class="resume-experience frontend-elements mt-2em">
-                        <h3 class="experience-heading"></h3>
-                        <hr  class="separator keep-left">
-
-                        <div class="experience-group experience-group-metaesse frontend-elements mt-2em">
-
-                            <div class="experience-group-heading">
-                                <p class="group-metaesse-heading"></p>
-                            </div>
-
-                        </div>
-
-                        <div class="experience-group experience-group-melasistema frontend-elements mt-2em">
-
-                            <div class="experience-group-heading">
-                                <p class="group-melasistema-heading"></p>
-                            </div>
-
-                        </div>
-
-                        <div class="experience-group experience-group-radionbc frontend-elements">
-                            <div class="experience-group-heading mt-2em">
-                                <p class="group-radionbc-heading"></p>
-                            </div>
-                        </div>
-
-                        <div class="experience-group experience-group-activision frontend-elements">
-                            <div class="experience-group-heading mt-2em">
-                                <p class="group-activision-heading"></p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="resume-experience backend-elements mt-2em">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showExperiences</span>() {<br>
-
-                            <div class="experience-group experience-group-metaesse backend-elements">
-
-                                <div class="experience-group-heading">
-                                    <p class="group-metaesse-heading backend-elements"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="experience-group experience-group-melasistema backend-elements">
-
-                                <div class="experience-group-heading">
-                                    <p class="group-melasistema-heading backend-elements"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="experience-group experience-group-radionbc backend-elements">
-
-                                <div class="experience-group-heading">
-                                    <p class="group-radionbc-heading backend-elements"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="experience-group experience-group-activision backend-elements">
-
-                                <div class="experience-group-heading">
-                                    <p class="group-activision-heading backend-elements"></p>
-                                </div>
-
-                            </div>
-
-                        <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-                    </div>
-
-                    <div class="resume-education frontend-elements mt-2em">
-                        <h3 class="education-heading"></h3>
-                        <hr  class="separator keep-left">
-                        <div class="education-group frontend-elements mt-2em"></div>
-                    </div>
-                    <div class="resume-education backend-elements mt-2em">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showEducation</span>() {<br>
-                            <div class="education-group backend-elements"></div>
-                            <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-                    </div>
-
-                    <div class="resume-language frontend-elements mt-2em">
-                        <h3 class="language-heading"></h3>
-                        <hr  class="separator keep-left">
-
-                        <div class="language-group mt-2em">
-                            <p class="language-text"></p>
-                        </div>
-
-                    </div>
-                    <div class="resume-language backend-elements mt-2em">
-
-                        <p><span class="function orange">public function</span> <span class="function yellow">showSpokenLanguages</span>() {<br>
-                            <div class="language-group">
-                                <p class="language-text"></p>
-                            </div>
-                            <br><span class="closing-brackets float-left">}</span>
-                        </p>
-
-                    </div>
-
+                <section>
+                    <h3>Stack <small>by relationship status</small></h3>
+                    <hr class="separator">
+                    <ul class="skills" id="skills"></ul>
                 </section>
 
+                <section>
+                    <h3>Built in the open</h3>
+                    <hr class="separator">
+                    <ul class="projects" id="projects"></ul>
+                    <p class="more">More on <a href="https://melasistema.com" target="_blank" rel="noopener">melasistema.com</a></p>
+                </section>
+            </section>
+
+            <section class="right-column">
+                <section>
+                    <h3>Who I am</h3>
+                    <hr class="separator">
+                    <p data-bind="summary"></p>
+                </section>
+
+                <section>
+                    <h3>Experience</h3>
+                    <hr class="separator">
+                    <div id="work"></div>
+                </section>
+
+                <section>
+                    <h3>Education</h3>
+                    <hr class="separator">
+                    <div id="education"></div>
+                </section>
+
+                <section>
+                    <h3>Languages</h3>
+                    <hr class="separator">
+                    <ul class="plain" id="languages"></ul>
+                </section>
+            </section>
+
+        </article>
+
+        <!-- Machine mode: the very same data, minus the typography -->
+        <article class="terminal machine-only" id="machine">
+            <p class="comment">// Machine mode. Same CV, minus the typography.</p>
+            <p class="comment">// For recruiters' AI tools, agents and the curious. No hidden prompts in here, promise.</p>
+
+            <div class="actions">
+                <a href="resume.json" target="_blank"><span class="orange">GET</span> /resume.json</a>
+                <a href="llms.txt" target="_blank"><span class="orange">GET</span> /llms.txt</a>
+                <button type="button" id="copy-prompt"><span class="yellow">copy</span>(<span class="purple">$as_prompt</span>)</button>
             </div>
+            <p class="comment" id="copy-feedback" aria-live="polite"></p>
 
-        </main>
+            <pre id="json"></pre>
+        </article>
 
-        <!-- footer -->
-        <footer itemscope itemtype="http://schema.org/WebSite"></footer>
-        <!-- footer end -->
+    </main>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script>
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = `assets/js/main.js?v=${version}`;
-            document.body.appendChild(script);
-        </script>
+    <script src="assets/js/main.js?v=2.0.0"></script>
 
-    </body>
+</body>
 
 </html>

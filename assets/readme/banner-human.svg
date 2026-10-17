@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Luca Visciola, Full Stack Developer and Technology Consultant. Human mode.">
+  <defs>
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+    <style>
+      .sans { font-family: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .mono { font-family: "Source Code Pro", SFMono-Regular, Menlo, Consolas, monospace; }
+      .name { font-weight: 800; font-size: 92px; fill: #000; }
+      .label { font-weight: 600; font-size: 24px; fill: #000; }
+      .label2 { font-weight: 300; font-size: 24px; fill: #000; }
+      .body { font-weight: 300; font-size: 26px; fill: #222; }
+      .hint { font-size: 15px; fill: #777; }
+      .accent { fill: #ef762e; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="400" fill="#e5e5e5"/>
+  <rect x="50" y="40" width="1180" height="320" fill="#fff" filter="url(#shadow)"/>
+
+  <!-- left: the name, right-aligned like the paper CV -->
+  <text class="sans name" x="590" y="148" text-anchor="end" textLength="300" lengthAdjust="spacingAndGlyphs">LUCA</text>
+  <text class="sans name" x="590" y="236" text-anchor="end" textLength="490" lengthAdjust="spacingAndGlyphs">VISCIOLA</text>
+  <text class="sans label" x="590" y="278" text-anchor="end">Full Stack Developer</text>
+  <text class="sans label2" x="590" y="310" text-anchor="end">Technology Consultant</text>
+  <rect x="540" y="324" width="50" height="4" fill="#000"/>
+
+  <rect x="638" y="80" width="3" height="240" fill="#000"/>
+
+  <!-- right: what I do now -->
+  <text class="sans body" x="690" y="150">Building for the web since 2009.</text>
+  <text class="sans body" x="690" y="196">These days: software that runs</text>
+  <text class="sans body" x="690" y="242">on <tspan class="accent" font-weight="500">your own silicon</tspan>.</text>
+
+  <text class="mono hint" x="690" y="318">// human mode · a dark theme shows the other half</text>
+</svg>

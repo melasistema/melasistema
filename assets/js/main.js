@@ -1,208 +1,78 @@
-(function( $ ) {
+(function () {
     'use strict';
 
     /*************************
      Predefined Variables
      *************************/
     const MELASISTEMA = {},
-        $window = $(window),
-        $document = $(document),
-        $body = $('body');
+        root = document.documentElement,
+        loader = document.querySelector('.loader'),
+        toggle = document.querySelector('.switch-toggle input');
 
-    //Check if function exists
-    $.fn.exists = function () {
-        return this.length > 0;
-    };
-
-    /**
-     * Shared content
-     * @type {{who_am_i: {description: string}, personal_info: {birthdate: string, job_titles: string[], phone: string, name: string, location: string, email: string, social_media: {github: string, linkedin: string}}, education: [{institution: string, year: string, degree: string},{institution: string, year: string, degree: string}], languages: string[], competencies: {skills: string[], tools: string[]}, experience: [{end_date: string, company_name: string, roles: string[], location: string, start_date: string},{end_date: string, company_name: string, roles: string[], location: string, start_date: string},{end_date: string, company_name: string, roles: string[], location: string, start_date: string},{end_date: string, company_name: string, roles: string[], location: string, start_date: string},{end_date: string, company_name: string, roles: string[], location: string, start_date: string},null,null,null], about_me: {description: string}}}
-     */
-    const jsonData = {
-
-        "personal_info": {
-            "name": "LUCA VISCIOLA",
-            "job_titles": {
-                "job_title_one": "Full Stack Developer",
-                "job_title_two": "Technology Consultant"
-            },
-            "birthdate": "09 Aprile 1983",
-            "location": "Laives (BZ), ITALY",
-            "phone": "+39 333.0000000",
-            "email": {
-                "text": "info@melasistema.com",
-                "url": "mailto:info@melasistema.com",
-            },
-            "social_media": {
-                "website": {
-                  "url": "https://lucavisciola.com",
-                  "text": "lucavisciola.com",
-                },
-                "linkedin": {
-                    "url": "https://www.linkedin.com/in/luca-visciola/",
-                    "text": "luca-visciola"
-                },
-                "github": {
-                    "url": "https://github.com/melasistema/",
-                    "text": "melasistema",
-                },
-            }
+    // Icons live in the page, not in resume.json: the data stays clean for machines
+    const ICONS = {
+        profiles: {
+            'Website': 'assets/svg/globe.svg',
+            'Open source': 'assets/svg/globe.svg',
+            'GitHub': 'assets/svg/github.svg',
+            'LinkedIn': 'assets/svg/linkedin.svg'
         },
-        "about_me": {
-            "heading": "DICONO DI ME",
-            "text": "Voglioso di cogliere ogni possibilità per migliorare le proprie conoscenze. Tanto deciso quanto aperto nella sua visione strategica. A suo agio nella gestione di situazioni critiche."
-        },
-        "competencies": {
-            "heading": "COMPETENZE",
-            "skills": {
-                "php": "PHP",
-                "html5": "HTML",
-                "css3": "CSS3",
-                "js": "JS",
-                "shopware": "SHOPWARE",
-                "laravel": "LARAVEL",
-                "wordpress": "WORDPRESS"
-            },
-            "tools": {
-                "heading": "TOOLS + UTILIZZATI",
-            }
-        },
-        "who_i_am": {
-            "heading": "CHI SONO",
-            "text": "Full Stack Developer e Technology Consultant con una solida esperienza decennale nel supporto di startups, aziende e agenzie, per guidarle verso il successo e la realizzazione dei loro obiettivi e delle aspettative dei loro clienti. Durante il mio percorso, ho affinato le mie competenze e acquisito una profonda comprensione delle dinamiche aziendali, permettendomi di fornire soluzioni tecnologiche innovative e su misura."
-        },
-        "experience": {
-            "groups": {
-                "metaesse": {
-                    "heading": "<b>(2025 - presente)</b>  @ <b>Metaesse Srl</b> - Bolzano (BZ)",
-                    "sub_groups": [
-                        {
-                            "roles": [
-                                "Full Stack Developer",
-                                "QA Developer, focused on creating processes and practices to ensure high-quality products through both proactive and reactive activities.",
-                            ]
-                        }
-                    ]
-                },
-                "melasistema": {
-                    "heading": "<b>(2009 - presente)</b>  @ <b><a href=\"https://melasistema.com\" target=\"_blank\">Melasistema</a></b> - Laives (BZ)",
-                    "sub_groups": [
-                        {
-                            "text": "<p><b>(2025)</b> @ <b><a href=\"https://codeworks.build\" target=\"_blank\">Codeworks</a></b> | Bolzano (BZ)</p>",
-                            "roles": [
-                                "QA Developer, focused on creating processes and practices to ensure high-quality products through both proactive and reactive activities.",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2022 - 2024)</b> @ <b><a href=\"https://functionalcompany.com\" target=\"_blank\">Functional Srl</a></b> | Bolzano (BZ)</p>",
-                            "roles": [
-                                "Shopware Platform Developer per soluzioni e-commerce personalizzate",
-                                "ERP Connector Developer per l'integrazione di sistemi gestionali",
-                                "Laravel Microservices Developer per applicazioni scalabili e modulari",
-                                "WordPress Developer per la creazione e gestione di siti dinamici",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2021 - 2022)</b> @ <b>Aliante Money Srl</b> | Salerno (SA)</p>",
-                            "roles": [
-                                "API Engineer per l’integrazione con istituti bancari",
-                                "Microservices Developer per gestionali e servizi interni",
-                                "Admin Dashboard Developer per la gestione di API e microservizi",
-                                "Frontend Developer con competenze trasversali",
-                                "Technology Consultant",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2020 - 2022)</b> @ <b>EOC Srl </b> | Laives (BZ)</p>",
-                            "roles": [
-                                "WordPress Developer per siti web e soluzioni personalizzate",
-                                "WooCommerce Developer per e-commerce avanzati",
-                                "WordPress Plugin Developer per estensioni su misura",
-                                "Technology Consultant per l’innovazione e l’ottimizzazione tecnologica di progetti aziendali e clienti",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2019 - 2020)</b> @ <b>Goodify Società Benefit </b> | Bolzano (BZ)</p>",
-                            "roles": [
-                                "Team Coordinator per la gestione e il supporto degli sviluppatori",
-                                "API Integrator per soluzioni connesse e scalabili",
-                                "CRM Integrator per la gestione e automazione dei dati aziendali",
-                                "Marketing Automation Specialist per l’integrazione di flussi automatizzati",
-                                "Graphic Visualizer per progetti digitali e stampa",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2017 - 2019)</b> @ <b>Tooly Tips Srl </b> | Bolzano (BZ)</p>",
-                            "roles": [
-                                "Backend Developer per infrastrutture scalabili nel settore travel-tech",
-                                "Frontend Developer per un'esperienza utente intuitiva e accessibile",
-                                "Customer & Service Panel Developer per albergatori e resort manager",
-                                "Ticketing System Developer per la monetizzazione innovativa dei lead B2B",
-                                "Lead Generation & Funnel Developer per connessioni ad alto tasso di conversione",
-                                "API Integrator per l’interoperabilità tra software gestionali e strutture turistiche",
-                                "Technology Consultant per la digitalizzazione e ottimizzazione delle soluzioni travel",
-                            ]
-                        },
-                        {
-                            "text": "<p><b>(2009 - presente)</b> @ <b>Melasistema </b> | Laives (BZ)</p>",
-                            "roles": [
-                                "Custom Web & Software Developer per soluzioni su misura",
-                                "2D/3D Graphic Designer & Animator per contenuti visivi dinamici",
-                                "Sound & Video Editor per produzioni multimediali professionali",
-                            ]
-                        },
-                    ]
-                },
-                "radionbc": {
-                    "heading": "<b>(2014 - 2017)</b>  @ <b>Radio NBC</b> - Bolzano (BZ)",
-                    "sub_groups": [
-                        {
-                            "roles": [
-                                "Radio Streaming Coordinator per la sincronizzazione dei flussi su piattaforme web",
-                                "Audio/Video Conversion & Publishing Developer per la distribuzione multimediale",
-                                "Backend Developer per l’infrastruttura e la gestione dei dati",
-                                "API Integrator per l’interoperabilità tra sistemi e servizi radiofonici",
-                            ]
-                        }
-                    ]
-                },
-                "activision": {
-                    "heading": "<b>(2007 - 2008)</b>  @ <b>Activision Blizzard</b> - Dublin (IRE)",
-                    "sub_groups": [
-                        {
-                            "roles": [
-                                "Localization QA Tester for Call of Duty: World at War, Guitar Hero: Metallica, and other titles",
-                            ]
-                        }
-                    ]
-                }
-            }
-        },
-        "education": {
-            "heading": "EDUCAZIONE",
-            "diploma": [
-                {
-                    "title": "(2005) Diploma “Advanced Drummer”",
-                    "location": "Drummer Collective di New York (USA)",
-                },
-                {
-                    "title": "(2003) Diploma superiore “Dirigente di comunità”",
-                    "location": "I.I.S artistica e per geometri di Terni (TR)",
-                },
-            ]
-
-        },
-        "language": {
-            "heading": "LINGUE",
-            "text": "Madrelingua Italiana e ottima conoscenza della lingua inglese"
+        skills: {
+            'PHP': 'assets/svg/tools/php.svg',
+            'Laravel': 'assets/svg/tools/laravel.svg',
+            'WordPress': 'assets/svg/tools/wordpress.svg',
+            'Shopware': 'assets/svg/tools/shopware.svg',
+            'JavaScript': 'assets/svg/tools/javascript.svg',
+            'HTML & CSS': 'assets/svg/tools/html5.svg',
+            'Data': 'assets/svg/tools/mysql.svg',
+            'jQuery': 'assets/svg/tools/jquery.svg',
+            'Tooling': 'assets/svg/tools/git.svg'
         }
     };
 
     /*************************
+     Helpers
+     *************************/
+
+    /**
+     * Tiny element builder: h('a', {href: '#'}, 'text', childNode)
+     */
+    function h(tag, attrs, ...children) {
+        const el = document.createElement(tag);
+        Object.entries(attrs || {}).forEach(([key, value]) => {
+            if (value !== undefined && value !== null) el.setAttribute(key, value);
+        });
+        children.flat().forEach((child) => {
+            if (child === undefined || child === null || child === '') return;
+            el.append(child instanceof Node ? child : document.createTextNode(child));
+        });
+        return el;
+    }
+
+    function icon(src) {
+        return src ? h('img', {src: src, alt: '', class: 'icon'}) : null;
+    }
+
+    function link(url, text) {
+        const external = /^https?:/.test(url);
+        return h('a', {href: url, target: external ? '_blank' : null, rel: external ? 'noopener' : null}, text);
+    }
+
+    function period(item) {
+        const end = item.endDate || 'present';
+        return item.startDate === end ? `(${end})` : `(${item.startDate} – ${end})`;
+    }
+
+    function escapeHtml(text) {
+        return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    /*************************
      Functions
-     +*************************/
-    MELASISTEMA.consolePrint = function() {
-        console.log('####################*******+++::........:.::::::::--=****+******#*+**++\n' +
+     *************************/
+    MELASISTEMA.consolePrint = function () {
+        console.log(
+            '####################*******+++::........:.::::::::--=****+******#*+**++\n' +
             '################**********++=:...............::::::--=+*************+++\n' +
             '#############************+*=:..  ..........:::::::::-==+***************\n' +
             '############**************+:.. ............:.:::::::--==+**************\n' +
@@ -259,218 +129,159 @@
             '=    ..:..::::-@=     ..    .:.::::::----:::  ....::   .::::.:::-:----=\n' +
             ':     .....:::-@-          .:::::::::::.::::     ..    .::::::---------\n' +
             '        .::..::#=          ::::--::::: ..  .  . ..   ..:::::::---------\n' +
-            ':    ...:::--:-+-       .::::::-:-:----:::.  ....    .::::::::::-:-----');
-    }
+            ':    ...:::--:-+-       .::::::-:-:----:::.  ....    .::::::::::-:-----'
+        );
+    };
 
-    /**
-     *
-     * @param isBackendTheme
-     */
-    function toggleTheme(isBackendTheme) {
-        $('.loader-background').show();
+    MELASISTEMA.showLoader = function (text) {
+        if (text) loader.querySelector('.loader-text').textContent = text;
+        loader.classList.add('is-visible');
+    };
 
-        $("#frontendTheme").prop("disabled", isBackendTheme);
-        $("#backendTheme").prop("disabled", !isBackendTheme);
-        $('.backend-elements').toggle(isBackendTheme);
-        $('.frontend-elements').toggle(!isBackendTheme);
+    MELASISTEMA.hideLoader = function (delay) {
+        setTimeout(() => loader.classList.remove('is-visible'), delay || 0);
+    };
 
-        // Use setTimeout to create a delay
-        setTimeout(function() {
-            // Hide the loader and loader background
-            $('.loader-background').hide();
-        }, 500); // Delay in milliseconds
-    }
+    MELASISTEMA.switchMode = function () {
+        toggle.checked = root.dataset.mode === 'machine';
 
-    MELASISTEMA.switchMode = function() {
-        const switchToggleInput = $(".switch-toggle input");
-
-        // Check for existing theme preference on page load
-        const savedTheme = localStorage.getItem('theme');
-        const isBackendTheme = savedTheme === 'backend';
-        toggleTheme(isBackendTheme);
-
-        // Set the switch's checked state based on the saved theme
-        switchToggleInput.prop('checked', isBackendTheme);
-
-        switchToggleInput.change(function() {
-            const isBackendTheme = $(this).is(":checked");
-            localStorage.setItem('theme', isBackendTheme ? 'backend' : 'frontend');
-            toggleTheme(isBackendTheme);
+        toggle.addEventListener('change', function () {
+            const mode = this.checked ? 'machine' : 'human';
+            MELASISTEMA.showLoader();
+            root.dataset.mode = mode;
+            try { localStorage.setItem('mode', mode); } catch (e) {}
+            MELASISTEMA.hideLoader(500);
         });
     };
 
-    MELASISTEMA.loadContent = function() {
+    MELASISTEMA.renderHuman = function (resume) {
+        const basics = resume.basics;
 
-        // Left Column
-        // Frontend Heading
-        $('h1.resume-name').text(jsonData.personal_info.name);
-        $('.resume-job-position-one').text(jsonData.personal_info.job_titles.job_title_one);
-        $('.resume-job-position-two').text(jsonData.personal_info.job_titles.job_title_two);
-        // Backend Heading
-        $('span.resume-name-backend').text(jsonData.personal_info.name);
-        $('.resume-job-position-one-backend').text(jsonData.personal_info.job_titles.job_title_one);
-        $('.resume-job-position-two-backend').text(jsonData.personal_info.job_titles.job_title_two);
+        document.querySelector('[data-bind="name"]').textContent = basics.name;
+        document.querySelector('[data-bind="label"]').textContent = basics.label;
+        document.querySelector('[data-bind="summary"]').textContent = basics.summary;
+        document.querySelector('[data-bind="reference"]').textContent = (resume.references[0] || {}).reference || '';
 
-        // Frontend Personal Info
-        $('p.birthday').prepend(jsonData.personal_info.birthdate + ' ');
-        $('p.location').prepend(jsonData.personal_info.location + ' ');
-        $('p.phone span.blurry-out').prepend(jsonData.personal_info.phone + ' ');
-        $('p.email a').attr('href', jsonData.personal_info.email.url).text(jsonData.personal_info.email.text);
-        // Set social media links
-        const socialMediaLinks = jsonData.personal_info.social_media;
-        $('p.website a').attr('href', socialMediaLinks.website.url).text(socialMediaLinks.website.text);
-        $('p.linkedin a').attr('href', socialMediaLinks.linkedin.url).text(socialMediaLinks.linkedin.text);
-        $('p.github a').attr('href', socialMediaLinks.github.url).text(socialMediaLinks.github.text);
-        // Backend Personal info
-        $('span.birthday').prepend(jsonData.personal_info.birthdate + ' ');
-        $('span.location').prepend(jsonData.personal_info.location + ' ');
-        $('span.email a').attr('href', jsonData.personal_info.email.url).text(jsonData.personal_info.email.text);
-        $('span.website a').attr('href', socialMediaLinks.website.url).text(socialMediaLinks.website.text);
-        $('span.linkedin a').attr('href', socialMediaLinks.linkedin.url).text(socialMediaLinks.linkedin.text);
-        $('span.github a').attr('href', socialMediaLinks.github.url).text(socialMediaLinks.github.text);
+        // Contacts
+        const location = `${basics.location.city} (${basics.location.region}), ${basics.location.countryCode === 'IT' ? 'Italy' : basics.location.countryCode}`;
+        document.getElementById('contacts').append(
+            h('li', {}, location, icon('assets/svg/map.svg')),
+            h('li', {}, link(`mailto:${basics.email}`, basics.email), icon('assets/svg/mail.svg')),
+            ...basics.profiles.map((profile) =>
+                h('li', {}, link(profile.url, profile.username), icon(ICONS.profiles[profile.network]))
+            )
+        );
 
+        // Skills
+        document.getElementById('skills').append(
+            ...resume.skills.map((skill) => h('li', {},
+                icon(ICONS.skills[skill.name]) || h('span', {class: 'icon icon-placeholder'}, '✦'),
+                h('div', {},
+                    h('strong', {}, skill.name),
+                    h('span', {class: 'status'}, skill.level),
+                    skill.keywords.length ? h('span', {class: 'keywords'}, skill.keywords.join(' · ')) : null
+                )
+            ))
+        );
 
-        // Other Saying
-        // Frontend Heading
-        $('h3.about-me-heading').text(jsonData.about_me.heading);
-        $('p.about-me-text').text(jsonData.about_me.text);
+        // Experience: engagements carried out "via" an umbrella are nested under it
+        const job = (item, nested) => h('div', {class: nested ? 'job job-nested' : 'job'},
+            h(nested ? 'h5' : 'h4', {},
+                h('span', {class: 'period'}, period(item)), ' @ ',
+                item.url ? link(item.url, item.name) : item.name,
+                h('span', {class: 'place'}, ` · ${item.location}`),
+                item.via ? h('span', {class: 'via'}, ` via ${item.via}`) : null
+            ),
+            h('p', {class: 'position'}, item.position),
+            item.summary ? h('p', {class: 'job-summary'}, item.summary) : null,
+            h('ul', {}, item.highlights.map((highlight) => h('li', {}, highlight)))
+        );
+        document.getElementById('work').append(
+            ...resume.work.filter((item) => !item.via).map((item) => {
+                const group = job(item, false);
+                resume.work
+                    .filter((child) => child.via === item.name)
+                    .forEach((child) => group.append(job(child, true)));
+                return group;
+            })
+        );
 
-        $('span.about-me-text').text(jsonData.about_me.text);
-
-        $('h3.competencies-heading').text(jsonData.competencies.heading);
-        $('h3.competencies-php').text(jsonData.competencies.skills.php);
-        $('h3.competencies-html5').text(jsonData.competencies.skills.html5);
-        $('h3.competencies-css3').text(jsonData.competencies.skills.css3);
-        $('h3.competencies-js').text(jsonData.competencies.skills.js);
-        $('h3.competencies-shopware').text(jsonData.competencies.skills.shopware);
-        $('h3.competencies-laravel').text(jsonData.competencies.skills.laravel);
-        $('h3.competencies-wordpress').text(jsonData.competencies.skills.wordpress);
-
-        $('h3.tools-heading').text(jsonData.competencies.tools.heading);
-
-        // Right Column
-        $('h3.who-i-am-heading').text(jsonData.who_i_am.heading);
-        $('p.who-i-am-text').text(jsonData.who_i_am.text);
-        $('span.who-i-am-text').text(jsonData.who_i_am.text);
-
-        // Experiences
-        $('h3.experience-heading').text('ESPERIENZE');
-
-        // Reusable function to create and append experience groups
-        function createExperienceGroup(groupKey, containerSelector) {
-            const groupData = jsonData.experience.groups[groupKey];
-            const container = $(containerSelector);
-
-            if (groupData && container.length) {
-                const heading = container.find('.experience-group-heading');
-                heading.html(`<p class="group-${groupKey}-heading">${groupData.heading}</p>`);
-
-                groupData.sub_groups.forEach(function(job) {
-                    const subGroup = $('<div class="experience-sub-group"></div>');
-                    if (job.text) {
-                        subGroup.append(job.text);
-                    }
-                    const roleList = $('<ul></ul>');
-                    job.roles.forEach(function(role) {
-                        roleList.append(`<li>${role}</li>`);
-                    });
-                    subGroup.append(roleList);
-                    container.append(subGroup);
-                });
-            }
-        }
-
-        // Frontend
-        createExperienceGroup('metaesse', '.experience-group-metaesse.frontend-elements');
-        createExperienceGroup('melasistema', '.experience-group-melasistema.frontend-elements');
-        createExperienceGroup('radionbc', '.experience-group-radionbc.frontend-elements');
-        createExperienceGroup('activision', '.experience-group-activision.frontend-elements');
-
-        // Backend
-        createExperienceGroup('metaesse', '.experience-group-metaesse.backend-elements');
-        createExperienceGroup('melasistema', '.experience-group-melasistema.backend-elements');
-        createExperienceGroup('radionbc', '.experience-group-radionbc.backend-elements');
-        createExperienceGroup('activision', '.experience-group-activision.backend-elements');
-
-
+        // Projects
+        document.getElementById('projects').append(
+            ...resume.projects.map((project) => h('li', {},
+                link(project.url, project.name),
+                h('span', {}, project.description),
+                project.docs ? h('small', {}, ' ', link(project.docs, 'docs')) : null,
+                project.repository ? h('small', {}, ' ', link(project.repository, 'source')) : null
+            ))
+        );
 
         // Education
-        $('h3.education-heading').text(jsonData.education.heading);
-        // Loop through diplomas and create elements
-        jsonData.education.diploma.forEach(function(diploma) {
-
-            // Create a container element for the diploma
-            const diplomaSubGroup = document.createElement('div');
-            diplomaSubGroup.classList.add('diploma-sub-group');
-
-            // Create elements for title and location
-            const title = document.createElement('p');
-            title.classList.add('education-heading'); // Add specific class
-            title.textContent = diploma.title;
-
-            const location = document.createElement('p');
-            location.classList.add('diploma-location'); // Add specific class
-            location.textContent = diploma.location;
-
-            // Append elements to the container
-            diplomaSubGroup.appendChild(title);
-            diplomaSubGroup.appendChild(location);
-
-
-            // Append the container to the education group
-            document.querySelector('.education-group.frontend-elements').appendChild(diplomaSubGroup);
-
-        });
-        // Backend
-        jsonData.education.diploma.forEach(function(diploma) {
-
-            // Create a container element for the diploma
-            const diplomaSubGroup = document.createElement('div');
-            diplomaSubGroup.classList.add('diploma-sub-group');
-
-            // Create elements for title and location
-            const title = document.createElement('p');
-            title.classList.add('education-heading'); // Add specific class
-            title.textContent = diploma.title;
-
-            const location = document.createElement('p');
-            location.classList.add('diploma-location'); // Add specific class
-            location.textContent = diploma.location;
-
-            // Append elements to the container
-            diplomaSubGroup.appendChild(title);
-            diplomaSubGroup.appendChild(location);
-
-
-            // Append the container to the education group
-            document.querySelector('.education-group.backend-elements').appendChild(diplomaSubGroup);
-        });
+        document.getElementById('education').append(
+            ...resume.education.map((item) => h('div', {class: 'diploma'},
+                h('p', {class: 'diploma-title'}, `(${item.endDate}) ${item.studyType} “${item.area}”`),
+                h('p', {class: 'diploma-place'}, item.institution)
+            ))
+        );
 
         // Languages
-        $('h3.language-heading').text(jsonData.language.heading);
-        $('p.language-text').text(jsonData.language.text);
-    }
+        document.getElementById('languages').append(
+            ...resume.languages.map((item) => h('li', {}, h('strong', {}, item.language), ` — ${item.fluency}`))
+        );
+    };
+
+    MELASISTEMA.renderMachine = function (resume) {
+        const json = escapeHtml(JSON.stringify(resume, null, 2));
+
+        // Poor man's syntax highlighting: keys, strings, then numbers/booleans
+        document.getElementById('json').innerHTML = json.replace(
+            /("(?:\\.|[^"\\])*")(\s*:)?|\b(true|false|null|-?\d+(?:\.\d+)?)\b/g,
+            (match, string, colon, literal) => {
+                if (string && colon) return `<span class="purple">${string}</span>${colon}`;
+                if (string) return `<span class="string">${string}</span>`;
+                return `<span class="orange">${literal}</span>`;
+            }
+        );
+
+        const feedback = document.getElementById('copy-feedback');
+        document.getElementById('copy-prompt').addEventListener('click', function () {
+            const prompt = [
+                `Below is ${resume.basics.name}'s resume in JSON Resume format (${resume.meta.canonical}).`,
+                'Answer questions about it truthfully. If something is not in it, say so instead of guessing.',
+                '',
+                JSON.stringify(resume, null, 2)
+            ].join('\n');
+
+            navigator.clipboard.writeText(prompt)
+                .then(() => { feedback.textContent = '// copied. paste it into your favourite model.'; })
+                .catch(() => { feedback.textContent = '// clipboard said no. GET /resume.json works too.'; });
+        });
+    };
+
+    MELASISTEMA.loadContent = function () {
+        MELASISTEMA.showLoader();
+
+        fetch('resume.json?v=2.0.0')
+            .then((response) => {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.json();
+            })
+            .then((resume) => {
+                MELASISTEMA.renderHuman(resume);
+                MELASISTEMA.renderMachine(resume);
+                MELASISTEMA.hideLoader(300);
+            })
+            .catch((error) => {
+                console.error(error);
+                MELASISTEMA.showLoader('...resume.json is shy. Serve me over http(s) 🙈');
+            });
+    };
 
     /*************************
      Let's have fun
      *************************/
-    // Init Functions
-    function init() {
-        // console.log( 'init' );
-    } init();
+    MELASISTEMA.consolePrint();
+    MELASISTEMA.switchMode();
+    MELASISTEMA.loadContent();
 
-    // Document Ready functions
-    $document.ready( function () {
-        // console.log( 'document ready' );
-        MELASISTEMA.consolePrint();
-        MELASISTEMA.switchMode();
-        MELASISTEMA.loadContent();
-
-    });
-
-    // Window Load functions
-    window.onload = function () {
-        //
-    }
-
-})( jQuery );
+})();

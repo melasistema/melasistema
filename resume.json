@@ -1,0 +1,268 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Luca Visciola",
+    "label": "Full Stack Developer & Technology Consultant",
+    "email": "info@melasistema.com",
+    "url": "https://lucavisciola.com",
+    "summary": "Full Stack Developer and Technology Consultant, building for the web since 2009 alongside startups, companies and agencies. A musician before I was a developer, and self-taught, which means every abstraction I use I had to take apart first. These days the through-line is sovereignty: software that runs on hardware you own, over data that never leaves it, in systems you are allowed to read all the way down.",
+    "location": {
+      "city": "Laives",
+      "region": "BZ",
+      "countryCode": "IT"
+    },
+    "profiles": [
+      { "network": "Website", "username": "lucavisciola.com", "url": "https://lucavisciola.com" },
+      { "network": "Open source", "username": "melasistema.com", "url": "https://melasistema.com" },
+      { "network": "GitHub", "username": "melasistema", "url": "https://github.com/melasistema" },
+      { "network": "LinkedIn", "username": "luca-visciola", "url": "https://www.linkedin.com/in/luca-visciola/" }
+    ]
+  },
+  "references": [
+    {
+      "name": "What they say",
+      "reference": "Eager to take every chance to learn more. Decisive, yet open in strategic vision. Comfortable when things get critical."
+    }
+  ],
+  "work": [
+    {
+      "name": "Metaesse Srl",
+      "location": "Bolzano (BZ)",
+      "position": "Full Stack & QA Developer",
+      "startDate": "2025",
+      "highlights": [
+        "Full stack development",
+        "QA Developer, building the processes and practices that keep products high-quality through both proactive and reactive work"
+      ]
+    },
+    {
+      "name": "Melasistema",
+      "url": "https://melasistema.com",
+      "location": "Laives (BZ)",
+      "position": "Independent developer & consultant",
+      "startDate": "2009",
+      "summary": "Not a company: the umbrella name for my independent work. Client engagements are listed below as \"via Melasistema\".",
+      "highlights": [
+        "Open source, local-first AI and web tooling (see projects)",
+        "Custom web and software development",
+        "2D/3D graphic design and animation",
+        "Sound and video editing"
+      ]
+    },
+    {
+      "name": "Codeworks",
+      "url": "https://codeworks.build",
+      "location": "Bolzano (BZ)",
+      "position": "QA Developer",
+      "via": "Melasistema",
+      "startDate": "2025",
+      "endDate": "2025",
+      "highlights": [
+        "QA Developer, building the processes and practices that keep products high-quality through both proactive and reactive work"
+      ]
+    },
+    {
+      "name": "Functional Srl",
+      "url": "https://functionalcompany.com",
+      "location": "Bolzano (BZ)",
+      "position": "Shopware & Laravel Developer",
+      "via": "Melasistema",
+      "startDate": "2022",
+      "endDate": "2024",
+      "highlights": [
+        "Shopware platform development for custom e-commerce solutions",
+        "ERP connectors to integrate business management systems",
+        "Laravel microservices for scalable, modular applications",
+        "WordPress development for dynamic sites"
+      ]
+    },
+    {
+      "name": "Aliante Money Srl",
+      "location": "Salerno (SA)",
+      "position": "API Engineer & Technology Consultant",
+      "via": "Melasistema",
+      "startDate": "2021",
+      "endDate": "2022",
+      "highlights": [
+        "API engineering for integrations with banking institutions",
+        "Microservices for internal management tools and services",
+        "Admin dashboard to manage APIs and microservices",
+        "Frontend development",
+        "Technology consulting"
+      ]
+    },
+    {
+      "name": "EOC Srl",
+      "location": "Laives (BZ)",
+      "position": "WordPress Developer & Technology Consultant",
+      "via": "Melasistema",
+      "startDate": "2020",
+      "endDate": "2022",
+      "highlights": [
+        "WordPress websites and custom solutions",
+        "Advanced WooCommerce e-commerce",
+        "Custom WordPress plugins",
+        "Technology consulting to innovate and optimise company and client projects"
+      ]
+    },
+    {
+      "name": "Goodify Società Benefit",
+      "location": "Bolzano (BZ)",
+      "position": "Team Coordinator & Integrator",
+      "via": "Melasistema",
+      "startDate": "2019",
+      "endDate": "2020",
+      "highlights": [
+        "Coordinated and supported the development team",
+        "API integrations for connected, scalable solutions",
+        "CRM integration to manage and automate business data",
+        "Marketing automation flows",
+        "Graphic visualisation for digital and print projects"
+      ]
+    },
+    {
+      "name": "Tooly Tips Srl",
+      "location": "Bolzano (BZ)",
+      "position": "Full Stack Developer (travel-tech)",
+      "via": "Melasistema",
+      "startDate": "2017",
+      "endDate": "2019",
+      "highlights": [
+        "Backend for scalable travel-tech infrastructure",
+        "Frontend for an intuitive, accessible user experience",
+        "Customer and service panels for hoteliers and resort managers",
+        "Ticketing system to monetise B2B leads",
+        "Lead generation and high-conversion funnels",
+        "API integrations between management software and hospitality providers",
+        "Technology consulting for travel digitalisation"
+      ]
+    },
+    {
+      "name": "Radio NBC",
+      "location": "Bolzano (BZ)",
+      "position": "Backend Developer & Streaming Coordinator",
+      "startDate": "2014",
+      "endDate": "2017",
+      "highlights": [
+        "Coordinated radio streams across web platforms",
+        "Audio/video conversion and publishing pipeline",
+        "Backend infrastructure and data management",
+        "API integrations between broadcasting systems and services"
+      ]
+    },
+    {
+      "name": "Activision Blizzard",
+      "location": "Dublin (IRL)",
+      "position": "Localization QA Tester",
+      "startDate": "2007",
+      "endDate": "2008",
+      "highlights": [
+        "Localization QA for Call of Duty: World at War, Guitar Hero: Metallica and other titles"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "S-MoE",
+      "description": "A 235B frontier model, answering from a laptop SSD. No cloud. No H100.",
+      "url": "https://s-moe.com/",
+      "docs": "https://docs.s-moe.com/",
+      "repository": "https://github.com/melasistema/s-moe",
+      "keywords": ["C++", "Apple Silicon", "Mixture-of-Experts", "local-first AI"]
+    },
+    {
+      "name": "ANDARTIS",
+      "description": "A private fleet of tiny neural networks, trained only on your data.",
+      "url": "https://docs.andartis.it/",
+      "repository": "https://github.com/melasistema/andartis",
+      "keywords": ["Vue", "neural networks", "local-first AI"]
+    },
+    {
+      "name": "ARKHEIN",
+      "description": "Command your silicon. Own your memory. A sovereign macOS agent.",
+      "url": "https://arkhein.melasistema.com/",
+      "repository": "https://github.com/melasistema/arkhein",
+      "keywords": ["PHP", "NativePHP", "Ollama", "RAG", "local-first AI"]
+    },
+    {
+      "name": "INTENTIO",
+      "description": "A bounded space where AI pays attention. A local-first, private cognitive environment.",
+      "url": "https://intentio.melasistema.com/",
+      "repository": "https://github.com/melasistema/intentio",
+      "keywords": ["PHP", "local-first AI"]
+    },
+    {
+      "name": "Mela CMS",
+      "description": "The CMS for the agentic era: your coding agent builds the site, your client gets a clean admin panel, and it all runs on a cheap shared host.",
+      "url": "https://mela-cms.melasistema.com/",
+      "docs": "https://docs.mela-cms.melasistema.com/",
+      "repository": "https://github.com/melasistema/mela-cms",
+      "keywords": ["PHP", "CMS", "agents"]
+    },
+    {
+      "name": "Redis Blog",
+      "description": "Redis as the primary database, not the cache in front of it.",
+      "url": "https://github.com/melasistema/redis-blog",
+      "keywords": ["Nuxt", "Redis", "Docker"]
+    },
+    {
+      "name": "Underwind",
+      "description": "We love Bootstrap. We really do. So we let the wind change direction.",
+      "url": "https://underwind.melasistema.com/",
+      "repository": "https://github.com/melasistema/underwind",
+      "keywords": ["WordPress", "Tailwind CSS"]
+    },
+    {
+      "name": "HydePHP Layouts Manager",
+      "description": "Layouts and reusable components for HydePHP, without the ceremony.",
+      "url": "https://github.com/melasistema/hydephp-layouts-manager",
+      "keywords": ["PHP", "HydePHP", "Composer"]
+    },
+    {
+      "name": "MelaFreelance",
+      "description": "Time tracking built by a freelancer who needed it, for freelancers who do too.",
+      "url": "https://github.com/melasistema/clients-melasistema",
+      "keywords": ["Laravel", "Vue"]
+    },
+    {
+      "name": "Mela Letterhead",
+      "description": "Write the document in Markdown. Get it back on your own paper.",
+      "url": "https://letterhead.melasistema.com/",
+      "repository": "https://github.com/melasistema/mela-letterhead",
+      "keywords": ["Python", "PDF", "Markdown"]
+    }
+  ],
+  "skills": [
+    { "name": "PHP", "level": "Married. Still in love.", "keywords": ["Laravel", "Symfony", "Composer"] },
+    { "name": "Local-first AI", "level": "Current obsession. Runs on my own silicon.", "keywords": ["Ollama", "RAG", "on-device inference", "Mixture-of-Experts", "Apple Silicon"] },
+    { "name": "Laravel", "level": "Daily driver.", "keywords": ["APIs", "microservices", "multi-tenant SaaS", "NativePHP"] },
+    { "name": "WordPress", "level": "Rated 100% on the previous CV. We don't talk about the sliders.", "keywords": ["themes", "plugins", "blocks", "WooCommerce", "headless"] },
+    { "name": "Shopware", "level": "Strictly professional: e-commerce, ERP connectors, the works.", "keywords": ["Shopware 6", "Symfony", "plugins"] },
+    { "name": "JavaScript", "level": "Shared custody with the frontend.", "keywords": ["Vue", "Nuxt", "TypeScript", "Node.js"] },
+    { "name": "HTML & CSS", "level": "Old friends. Tailwind joined the band.", "keywords": ["HTML5", "CSS3", "Sass", "Tailwind CSS", "Bootstrap"] },
+    { "name": "Data", "level": "Mostly MySQL. Redis when I want to prove a point.", "keywords": ["MySQL", "Redis"] },
+    { "name": "jQuery", "level": "It's complicated. It powered this very CV until v2.0.", "keywords": [] },
+    { "name": "Tooling", "level": "The usual suspects.", "keywords": ["Git", "Docker", "npm", "Composer", "PhpStorm"] }
+  ],
+  "education": [
+    {
+      "institution": "Drummer Collective, New York (USA)",
+      "studyType": "Diploma",
+      "area": "Advanced Drummer",
+      "endDate": "2005"
+    },
+    {
+      "institution": "I.I.S. artistico e per geometri, Terni (TR)",
+      "studyType": "High school diploma",
+      "area": "Dirigente di comunità (community management)",
+      "endDate": "2003"
+    }
+  ],
+  "languages": [
+    { "language": "Italian", "fluency": "Native speaker" },
+    { "language": "English", "fluency": "Excellent" }
+  ],
+  "meta": {
+    "canonical": "https://resume.lucavisciola.com/resume.json"
+  }
+}

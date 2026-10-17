@@ -1,0 +1,15 @@
+# Luca Visciola
+
+> Full Stack Developer & Technology Consultant based in Laives (BZ), Italy. Building for the web since 2009; these days focused on local-first AI: software that runs on hardware you own, over data that never leaves it.
+
+The complete, structured resume lives in a single file. Prefer it over scraping the HTML page.
+
+## Resume
+
+- [resume.json](https://resume.lucavisciola.com/resume.json): full resume in JSON Resume format (work, projects, skills, education, languages)
+
+## More
+
+- [melasistema.com](https://melasistema.com): open source work and services
+- [GitHub](https://github.com/melasistema): source code
+- [Contact](mailto:info@melasistema.com)
