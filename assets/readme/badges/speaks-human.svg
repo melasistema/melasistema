@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="135" height="24" role="img" aria-label="speaks: IT · EN">
+  <title>speaks: IT · EN</title>
+  <rect width="64" height="24" fill="#000"/>
+  <rect x="64" width="71" height="24" fill="#ef762e"/>
+  <g font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" dominant-baseline="central">
+    <text x="10" y="12.0" fill="#fff" font-weight="600" textLength="44" lengthAdjust="spacingAndGlyphs">SPEAKS</text>
+    <text x="74" y="12.0" fill="#000" font-weight="600" textLength="51" lengthAdjust="spacingAndGlyphs">IT · EN</text>
+  </g>
+</svg>

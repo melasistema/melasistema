@@ -1,0 +1,39 @@
+# Validates resume.json against the JSON Resume schema.
+# The workflow name is the badge label in the README: "resume.json | passing".
+name: resume.json
+
+on:
+  push:
+    branches: [main]
+    paths: [resume.json, .github/workflows/resume.yml]
+  pull_request:
+    paths: [resume.json, .github/workflows/resume.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate against JSON Resume schema v1.0.0
+        run: |
+          npm install --no-save --silent resume-schema@1.0.0
+          node -e '
+            const schema = require("resume-schema");
+            const resume = require("./resume.json");
+            schema.validate(resume, (errors) => {
+              if (errors) {
+                console.error(JSON.stringify(errors, null, 2));
+                process.exit(1);
+              }
+              console.log("resume.json is a valid JSON Resume.");
+            });
+          '

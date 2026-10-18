@@ -12,7 +12,31 @@
   <a href="mailto:info@melasistema.com">info@melasistema.com</a>
 </p>
 
-> *The duality is only apparent...* The banner above follows your GitHub theme: light for humans, dark for machines. Taking one side or the other won't work.
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/runs-on-machine.svg">
+    <img alt="runs on: your own silicon" src="assets/readme/badges/runs-on-human.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/trackers-machine.svg">
+    <img alt="trackers: 0" src="assets/readme/badges/trackers-human.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/telemetry-machine.svg">
+    <img alt="cloud telemetry: none" src="assets/readme/badges/telemetry-human.svg">
+  </picture>
+  <br>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/based-in-machine.svg">
+    <img alt="based in: Bolzano, IT, CET" src="assets/readme/badges/based-in-human.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/speaks-machine.svg">
+    <img alt="speaks: Italian, English" src="assets/readme/badges/speaks-human.svg">
+  </picture>
+</p>
+
+> *The duality is only apparent...* The banner and badges above follow your GitHub theme: light for humans, dark for machines. Taking one side or the other won't work.
 
 ### `whoami`
 
@@ -76,6 +100,8 @@ The rest of the shelf lives on **[melasistema.com](https://melasistema.com)**.
 ### For machines
 
 The full CV is one file, in [JSON Resume](https://jsonresume.org) format:
+
+[![resume.json](https://github.com/melasistema/melasistema/actions/workflows/resume.yml/badge.svg?branch=main)](https://github.com/melasistema/melasistema/actions/workflows/resume.yml)
 
 ```sh
 curl -s https://resume.lucavisciola.com/resume.json | jq .
