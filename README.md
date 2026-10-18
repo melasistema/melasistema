@@ -82,7 +82,3 @@ curl -s https://resume.lucavisciola.com/resume.json | jq .
 ```
 
 There's also an [`llms.txt`](https://resume.lucavisciola.com/llms.txt). No hidden prompts in this README, promise. What you read is what your model gets.
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=melasistema&label=PASSED+BY+VISITORS&color=ef762e&style=flat-square" alt="visitors">
-</p>
