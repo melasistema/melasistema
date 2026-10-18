@@ -84,6 +84,7 @@ The rest of the shelf lives on **[melasistema.com](https://melasistema.com)**.
   <img src="assets/svg/tools/javascript.svg" alt="JavaScript" width="40">&nbsp;
   <img src="assets/svg/tools/nodejs.svg" alt="Node.js" width="40">&nbsp;
   <img src="assets/svg/tools/mysql.svg" alt="MySQL" width="40">&nbsp;
+  <img src="assets/svg/tools/postgresql.svg" alt="PostgreSQL" width="40">&nbsp;
   <img src="assets/svg/tools/git.svg" alt="Git" width="40">
 </p>
 

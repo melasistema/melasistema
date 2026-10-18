@@ -240,7 +240,7 @@
     { "name": "Shopware", "level": "Strictly professional: e-commerce, ERP connectors, the works.", "keywords": ["Shopware 6", "Symfony", "plugins"] },
     { "name": "JavaScript", "level": "Shared custody with the frontend.", "keywords": ["Vue", "Nuxt", "TypeScript", "Node.js"] },
     { "name": "HTML & CSS", "level": "Old friends. Tailwind joined the band.", "keywords": ["HTML5", "CSS3", "Sass", "Tailwind CSS", "Bootstrap"] },
-    { "name": "Data", "level": "Mostly MySQL. Redis when I want to prove a point.", "keywords": ["MySQL", "Redis"] },
+    { "name": "Data", "level": "MySQL and PostgreSQL. Redis when I want to prove a point.", "keywords": ["MySQL", "PostgreSQL", "Redis"] },
     { "name": "jQuery", "level": "It's complicated. It powered this very CV until v2.0.", "keywords": [] },
     { "name": "Tooling", "level": "The usual suspects.", "keywords": ["Git", "Docker", "npm", "Composer", "PhpStorm"] }
   ],

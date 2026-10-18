@@ -219,6 +219,7 @@ Human mode
 .skills li > div { display: flex; flex-direction: column; }
 .skills .status { font-size: .85rem; font-weight: 300; }
 .skills .keywords { font-size: .7rem; color: var(--muted); margin-top: 2px; }
+.icon-stack { display: flex; flex-direction: column; gap: 6px; flex: none; }
 .icon-placeholder {
     display: inline-flex;
     align-items: center;

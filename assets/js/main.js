@@ -24,7 +24,7 @@
             'Shopware': 'assets/svg/tools/shopware.svg',
             'JavaScript': 'assets/svg/tools/javascript.svg',
             'HTML & CSS': 'assets/svg/tools/html5.svg',
-            'Data': 'assets/svg/tools/mysql.svg',
+            'Data': ['assets/svg/tools/mysql.svg', 'assets/svg/tools/postgresql.svg'],
             'jQuery': 'assets/svg/tools/jquery.svg',
             'Tooling': 'assets/svg/tools/git.svg'
         }
@@ -51,6 +51,13 @@
 
     function icon(src) {
         return src ? h('img', {src: src, alt: '', class: 'icon'}) : null;
+    }
+
+    // A skill can have one icon, several (stacked), or none (placeholder)
+    function skillIcons(src) {
+        if (!src) return h('span', {class: 'icon icon-placeholder'}, '✦');
+        if (!Array.isArray(src)) return icon(src);
+        return h('span', {class: 'icon-stack'}, src.map(icon));
     }
 
     function link(url, text) {
@@ -175,7 +182,7 @@
         // Skills
         document.getElementById('skills').append(
             ...resume.skills.map((skill) => h('li', {},
-                icon(ICONS.skills[skill.name]) || h('span', {class: 'icon icon-placeholder'}, '✦'),
+                skillIcons(ICONS.skills[skill.name]),
                 h('div', {},
                     h('strong', {}, skill.name),
                     h('span', {class: 'status'}, skill.level),
