@@ -182,7 +182,7 @@
       "description": "Command your silicon. Own your memory. A sovereign macOS agent.",
       "url": "https://arkhein.melasistema.com/",
       "repository": "https://github.com/melasistema/arkhein",
-      "keywords": ["PHP", "NativePHP", "oMLX", "Ollama", "RAG", "local-first AI"]
+      "keywords": ["PHP", "NativePHP", "Ollama", "RAG", "local-first AI"]
     },
     {
       "name": "INTENTIO",
@@ -234,7 +234,7 @@
   ],
   "skills": [
     { "name": "PHP", "level": "Married. Still in love.", "keywords": ["Laravel", "Symfony", "Composer"] },
-    { "name": "Local-first AI", "level": "Current obsession. Runs on my own silicon.", "keywords": ["Ollama", "RAG", "on-device inference", "Mixture-of-Experts", "Apple Silicon"] },
+    { "name": "Local-first AI", "level": "Current obsession. Runs on my own silicon.", "keywords": ["oMLX","Ollama", "RAG", "on-device inference", "Mixture-of-Experts", "Apple Silicon"] },
     { "name": "Laravel", "level": "Daily driver.", "keywords": ["APIs", "microservices", "multi-tenant SaaS", "NativePHP"] },
     { "name": "WordPress", "level": "Rated 100% on the previous CV. We don't talk about the sliders.", "keywords": ["themes", "plugins", "blocks", "WooCommerce", "headless"] },
     { "name": "Shopware", "level": "Strictly professional: e-commerce, ERP connectors, the works.", "keywords": ["Shopware 6", "Symfony", "plugins"] },
