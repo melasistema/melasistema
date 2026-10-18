@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="105" height="24" role="img" aria-label="trackers: 0">
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="20" role="img" aria-label="trackers: 0">
   <title>trackers: 0</title>
-  <rect width="78" height="24" fill="#000"/>
-  <rect x="78" width="27" height="24" fill="#ef762e"/>
-  <g font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" dominant-baseline="central">
-    <text x="10" y="12.0" fill="#fff" font-weight="600" textLength="58" lengthAdjust="spacingAndGlyphs">TRACKERS</text>
-    <text x="88" y="12.0" fill="#000" font-weight="600" textLength="7" lengthAdjust="spacingAndGlyphs">0</text>
+  <clipPath id="r"><rect width="84" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="65" height="20" fill="#000"/>
+    <rect x="65" width="19" height="20" fill="#ef762e"/>
+  </g>
+  <g font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" dominant-baseline="central">
+    <text x="6" y="10.0" fill="#fff" font-weight="600" textLength="53" lengthAdjust="spacingAndGlyphs">TRACKERS</text>
+    <text x="71" y="10.0" fill="#000" font-weight="600" textLength="7" lengthAdjust="spacingAndGlyphs">0</text>
   </g>
 </svg>

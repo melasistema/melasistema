@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="245" height="24" role="img" aria-label="based_in: &quot;Bolzano, IT · CET&quot;">
+<svg xmlns="http://www.w3.org/2000/svg" width="218" height="20" role="img" aria-label="based_in: &quot;Bolzano, IT · CET&quot;">
   <title>&quot;based_in&quot;: &quot;Bolzano, IT · CET&quot;</title>
-  <rect x=".5" y=".5" width="244" height="23" fill="#1e1e1e" stroke="#3a3a3a"/>
-  <text x="10" y="12.0" font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" dominant-baseline="central" fill="#e8e8e8" textLength="225" lengthAdjust="spacingAndGlyphs"><tspan fill="#c586c0">"based_in"</tspan>: <tspan fill="#6a9955">&quot;Bolzano, IT · CET&quot;</tspan></text>
+  <rect x=".5" y=".5" width="217" height="19" rx="3" fill="#1e1e1e" stroke="#3a3a3a"/>
+  <text x="6" y="10.0" font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" dominant-baseline="central" fill="#e8e8e8" textLength="206" lengthAdjust="spacingAndGlyphs"><tspan fill="#c586c0">"based_in"</tspan>: <tspan fill="#6a9955">&quot;Bolzano, IT · CET&quot;</tspan></text>
 </svg>

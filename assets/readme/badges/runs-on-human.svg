@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="207" height="24" role="img" aria-label="runs on: your own silicon">
+<svg xmlns="http://www.w3.org/2000/svg" width="177" height="20" role="img" aria-label="runs on: your own silicon">
   <title>runs on: your own silicon</title>
-  <rect width="71" height="24" fill="#000"/>
-  <rect x="71" width="136" height="24" fill="#ef762e"/>
-  <g font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" dominant-baseline="central">
-    <text x="10" y="12.0" fill="#fff" font-weight="600" textLength="51" lengthAdjust="spacingAndGlyphs">RUNS ON</text>
-    <text x="81" y="12.0" fill="#000" font-weight="600" textLength="116" lengthAdjust="spacingAndGlyphs">your own silicon</text>
+  <clipPath id="r"><rect width="177" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="59" height="20" fill="#000"/>
+    <rect x="59" width="118" height="20" fill="#ef762e"/>
+  </g>
+  <g font-family="'Source Code Pro', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" dominant-baseline="central">
+    <text x="6" y="10.0" fill="#fff" font-weight="600" textLength="47" lengthAdjust="spacingAndGlyphs">RUNS ON</text>
+    <text x="65" y="10.0" fill="#000" font-weight="600" textLength="106" lengthAdjust="spacingAndGlyphs">your own silicon</text>
   </g>
 </svg>
