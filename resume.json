@@ -182,7 +182,7 @@
       "description": "Command your silicon. Own your memory. A sovereign macOS agent.",
       "url": "https://arkhein.melasistema.com/",
       "repository": "https://github.com/melasistema/arkhein",
-      "keywords": ["PHP", "NativePHP", "Ollama", "RAG", "local-first AI"]
+      "keywords": ["PHP", "NativePHP", "oMLX", "Ollama", "RAG", "local-first AI"]
     },
     {
       "name": "INTENTIO",
