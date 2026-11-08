@@ -44,7 +44,7 @@ A musician before I was a developer, and I never fully stopped being one. Self-t
 
 Building for the web since 2009 alongside startups, companies and agencies. These days the through-line is **sovereignty**: software that runs on hardware you own, over data that never leaves it.
 
-- **Now:** Full Stack & QA Developer at Metaesse, Bolzano
+- **Now:** founder and developer of [Letterhead Studio](https://letterheadstudio.eu), the letterhead that dresses the document. Free, private by architecture, on an EU server
 - **Also now:** building local-first AI in the open, under [Melasistema](https://melasistema.com)
 - **Always:** a drummer. Diploma from Drummer Collective, New York, 2005
 
@@ -66,7 +66,7 @@ Building for the web since 2009 alongside startups, companies and agencies. Thes
 | Project | What it does | More |
 |---|---|---|
 | [**Mela CMS**](https://mela-cms.melasistema.com/) | The CMS for the agentic era. Your coding agent builds the site; your client gets a clean admin panel. | [docs](https://docs.mela-cms.melasistema.com/) · [source](https://github.com/melasistema/mela-cms) |
-| [**Mela Letterhead**](https://letterhead.melasistema.com/) | Write the document in Markdown. Get it back on your own paper. | [source](https://github.com/melasistema/mela-letterhead) |
+| [**Mela Letterhead**](https://letterhead.melasistema.com/) | Write the document in Markdown. Get it back on your own paper. The engine behind [Letterhead Studio](https://letterheadstudio.eu). | [source](https://github.com/melasistema/mela-letterhead) |
 | [**Redis Blog**](https://github.com/melasistema/redis-blog) | Redis as the primary database, not the cache in front of it. | |
 | [**Underwind**](https://underwind.melasistema.com/) | We love Bootstrap. We really do. So we let the wind change direction. | [source](https://github.com/melasistema/underwind) |
 
