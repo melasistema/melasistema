@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <!-- Source of truth for versioning: bump here and in the ?v= query strings below -->
-    <meta name="version" content="2.0.0">
+    <meta name="version" content="2.1.0">
 
     <title>Luca Visciola - Resume</title>
 
@@ -23,6 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="alternate" type="application/json" href="resume.json" title="Resume (JSON Resume)">
+    <link rel="alternate" type="application/json" hreflang="it" href="resume.it.json" title="Curriculum (JSON Resume, italiano)">
     <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
 
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
@@ -35,17 +36,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:wght@300..700&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.0.0">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
 
-    <!-- Pick the mode before first paint: saved choice, else follow the OS theme -->
+    <!-- Pick mode and language before first paint.
+         Mode: saved choice, else the OS theme. Language: ?lang=, else saved choice, else the browser. -->
     <script>
         (function () {
-            let mode = null;
+            const root = document.documentElement,
+                supported = ['en', 'it'];
+            let mode = null, lang = new URLSearchParams(location.search).get('lang');
             try { mode = localStorage.getItem('mode'); } catch (e) {}
             if (mode !== 'human' && mode !== 'machine') {
                 mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'machine' : 'human';
             }
-            document.documentElement.dataset.mode = mode;
+            if (!supported.includes(lang)) {
+                try { lang = localStorage.getItem('lang'); } catch (e) {}
+            }
+            if (!supported.includes(lang)) {
+                const browser = (navigator.languages || [navigator.language || '']).find((tag) => /^(en|it)\b/i.test(tag)) || '';
+                lang = browser.slice(0, 2).toLowerCase() === 'it' ? 'it' : 'en';
+            }
+            root.dataset.mode = mode;
+            root.dataset.lang = root.lang = lang;
         })();
     </script>
 </head>
@@ -53,16 +65,23 @@
 <body>
 
     <div class="loader" role="status" aria-live="polite">
-        <div class="loader-text">...setting up things &#128540;</div>
+        <div class="loader-text" data-i18n="loading">...setting up things &#128540;</div>
     </div>
 
     <main>
 
+        <nav class="lang" aria-label="Language">
+            <span class="lang-key" aria-hidden="true">lang=</span>
+            <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">en</button>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <button type="button" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="false">it</button>
+        </nav>
+
         <div class="chooser">
-            <p class="description">The duality is only apparent...<br>Taking one side or the other won't work:</p>
+            <p class="description" data-i18n="duality">The duality is only apparent...<br>Taking one side or the other won't work:</p>
 
             <div class="switch">
-                <span class="switch-human">Human mode</span>
+                <span class="switch-human" data-i18n="human">Human mode</span>
                 <label class="switch-toggle">
                     <input type="checkbox" aria-label="Machine mode">
                     <span class="switch-slider"></span>
@@ -84,46 +103,46 @@
                 <ul class="contacts" id="contacts"></ul>
 
                 <section>
-                    <h3>What they say</h3>
+                    <h3 data-i18n="say">What they say</h3>
                     <hr class="separator">
                     <p class="quote" data-bind="reference"></p>
                 </section>
 
                 <section>
-                    <h3>Stack <small>by relationship status</small></h3>
+                    <h3>Stack <small data-i18n="stack">by relationship status</small></h3>
                     <hr class="separator">
                     <ul class="skills" id="skills"></ul>
                 </section>
 
                 <section>
-                    <h3>Built in the open</h3>
+                    <h3 data-i18n="open">Built in the open</h3>
                     <hr class="separator">
                     <ul class="projects" id="projects"></ul>
-                    <p class="more">More on <a href="https://melasistema.com" target="_blank" rel="noopener">melasistema.com</a></p>
+                    <p class="more"><span data-i18n="more">More on</span> <a href="https://melasistema.com" target="_blank" rel="noopener">melasistema.com</a></p>
                 </section>
             </section>
 
             <section class="right-column">
                 <section>
-                    <h3>Who I am</h3>
+                    <h3 data-i18n="who">Who I am</h3>
                     <hr class="separator">
                     <p data-bind="summary"></p>
                 </section>
 
                 <section>
-                    <h3>Experience</h3>
+                    <h3 data-i18n="experience">Experience</h3>
                     <hr class="separator">
                     <div id="work"></div>
                 </section>
 
                 <section>
-                    <h3>Education</h3>
+                    <h3 data-i18n="education">Education</h3>
                     <hr class="separator">
                     <div id="education"></div>
                 </section>
 
                 <section>
-                    <h3>Languages</h3>
+                    <h3 data-i18n="languages">Languages</h3>
                     <hr class="separator">
                     <ul class="plain" id="languages"></ul>
                 </section>
@@ -133,11 +152,11 @@
 
         <!-- Machine mode: the very same data, minus the typography -->
         <article class="terminal machine-only" id="machine">
-            <p class="comment">// Machine mode. Same CV, minus the typography.</p>
-            <p class="comment">// For recruiters' AI tools, agents and the curious. No hidden prompts in here, promise.</p>
+            <p class="comment" data-i18n="machine1">// Machine mode. Same CV, minus the typography.</p>
+            <p class="comment" data-i18n="machine2">// For recruiters' AI tools, agents and the curious. No hidden prompts in here, promise.</p>
 
             <div class="actions">
-                <a href="resume.json" target="_blank"><span class="orange">GET</span> /resume.json</a>
+                <a href="resume.json" target="_blank" id="get-resume"><span class="orange">GET</span> /<span data-bind="file">resume.json</span></a>
                 <a href="llms.txt" target="_blank"><span class="orange">GET</span> /llms.txt</a>
                 <button type="button" id="copy-prompt"><span class="yellow">copy</span>(<span class="purple">$as_prompt</span>)</button>
             </div>
@@ -148,7 +167,7 @@
 
     </main>
 
-    <script src="assets/js/main.js?v=2.0.0"></script>
+    <script src="assets/js/main.js?v=2.1.0"></script>
 
 </body>
 

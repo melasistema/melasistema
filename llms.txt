@@ -7,6 +7,7 @@ The complete, structured resume lives in a single file. Prefer it over scraping 
 ## Resume
 
 - [resume.json](https://resume.lucavisciola.com/resume.json): full resume in JSON Resume format (work, projects, skills, education, languages)
+- [resume.it.json](https://resume.lucavisciola.com/resume.it.json): the same resume in Italian, same structure
 
 ## Now
 

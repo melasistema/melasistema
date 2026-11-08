@@ -104,7 +104,7 @@ Elements
 Elements
     Mode switch
  */
-.chooser { padding: 48px 0; text-align: center; }
+.chooser { padding: 24px 0 48px; text-align: center; }
 .chooser .description { margin: 0 0 1.5em; }
 
 .switch {
@@ -146,6 +146,54 @@ Elements
 input:checked + .switch-slider { background-color: var(--orange); }
 input:focus-visible + .switch-slider { outline: 2px solid var(--orange); outline-offset: 2px; }
 input:checked + .switch-slider::before { transform: translateX(26px); }
+
+/* "Modalità umana" is longer than "Human mode": tighten, then wrap, on narrow screens */
+@media (max-width: 480px) {
+    .switch { flex-wrap: wrap; gap: 8px; font-size: .9rem; }
+}
+
+/**
+Elements
+    Language switch: quiet on purpose, the mode switch is the show
+ */
+.lang {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-top: 12px;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    color: var(--muted);
+}
+.lang button {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: uppercase;
+    color: inherit;
+    background: none;
+    border: 0;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 6px;
+    cursor: pointer;
+}
+.lang button:hover { color: var(--orange); }
+.lang button:focus-visible { outline: 2px solid var(--orange); outline-offset: -6px; }
+.lang button[aria-pressed="true"] {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    cursor: default;
+}
+.lang-key { display: none; }
+
+[data-mode="machine"] .lang { font-family: var(--font-machine); letter-spacing: 0; gap: 0; }
+[data-mode="machine"] .lang-key { display: inline; }
+[data-mode="machine"] .lang button { text-transform: none; min-width: 32px; padding: 0 4px; }
+[data-mode="machine"] .lang button[aria-pressed="true"] { color: var(--string); font-weight: 400; }
 
 /**
 Human mode
@@ -326,7 +374,7 @@ Print: humans only, no paper shadow
     :root[data-mode] { --ink: #000; --muted: #555; --rule: #000; --surface: #fff; }
     html { font-size: 10.5px; }
     body { background: #fff; }
-    .chooser, .loader, .machine-only { display: none !important; }
+    .lang, .chooser, .loader, .machine-only { display: none !important; }
     .human-only { display: grid !important; }
     .paper {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);

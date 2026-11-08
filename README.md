@@ -108,4 +108,4 @@ The full CV is one file, in [JSON Resume](https://jsonresume.org) format:
 curl -s https://resume.lucavisciola.com/resume.json | jq .
 ```
 
-There's also an [`llms.txt`](https://resume.lucavisciola.com/llms.txt). No hidden prompts in this README, promise. What you read is what your model gets.
+Also in Italian: [`resume.it.json`](https://resume.lucavisciola.com/resume.it.json), or [`?lang=it`](https://resume.lucavisciola.com/?lang=it) for humans. There's also an [`llms.txt`](https://resume.lucavisciola.com/llms.txt). No hidden prompts in this README, promise. What you read is what your model gets.

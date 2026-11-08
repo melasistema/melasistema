@@ -1,13 +1,13 @@
-# Validates resume.json against the JSON Resume schema.
+# Validates resume.json and its Italian twin against the JSON Resume schema.
 # The workflow name is the badge label in the README: "resume.json | passing".
 name: resume.json
 
 on:
   push:
     branches: [main]
-    paths: [resume.json, .github/workflows/resume.yml]
+    paths: [resume.json, resume.it.json, .github/workflows/resume.yml]
   pull_request:
-    paths: [resume.json, .github/workflows/resume.yml]
+    paths: [resume.json, resume.it.json, .github/workflows/resume.yml]
   workflow_dispatch:
 
 permissions:
@@ -28,12 +28,13 @@ jobs:
           npm install --no-save --silent resume-schema@1.0.0
           node -e '
             const schema = require("resume-schema");
-            const resume = require("./resume.json");
-            schema.validate(resume, (errors) => {
-              if (errors) {
-                console.error(JSON.stringify(errors, null, 2));
-                process.exit(1);
-              }
-              console.log("resume.json is a valid JSON Resume.");
-            });
+            for (const file of ["resume.json", "resume.it.json"]) {
+              schema.validate(require(`./${file}`), (errors) => {
+                if (errors) {
+                  console.error(file, JSON.stringify(errors, null, 2));
+                  process.exit(1);
+                }
+                console.log(`${file} is a valid JSON Resume.`);
+              });
+            }
           '
