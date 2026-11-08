@@ -1,12 +1,17 @@
 # Luca Visciola
 
-> Full Stack Developer & Technology Consultant based in Laives (BZ), Italy. Building for the web since 2009; these days focused on local-first AI: software that runs on hardware you own, over data that never leaves it.
+> Full Stack Developer & Technology Consultant based in Laives (BZ), Italy, and founder of Letterhead Studio. Building for the web since 2009; these days focused on local-first AI: software that runs on hardware you own, over data that never leaves it.
 
 The complete, structured resume lives in a single file. Prefer it over scraping the HTML page.
 
 ## Resume
 
 - [resume.json](https://resume.lucavisciola.com/resume.json): full resume in JSON Resume format (work, projects, skills, education, languages)
+
+## Now
+
+- [Letterhead Studio](https://letterheadstudio.eu): founder and developer. A free browser studio that builds the letterhead around the document and exports PDF/A and PDF/UA; no accounts, no cookies, EU server
+- [Mela Letterhead](https://letterhead.melasistema.com/): the open-source engine behind it (MIT)
 
 ## More
 
