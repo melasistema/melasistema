@@ -17,10 +17,17 @@
     // Each language is its own valid JSON Resume; English is canonical
     const FILES = {en: 'resume.json', it: 'resume.it.json'};
 
+    // Pre-rendered by scripts/pdf.sh; the download name is what lands in a recruiter's folder
+    const PDFS = {
+        en: {file: 'resume.pdf', name: 'Luca-Visciola-CV.pdf'},
+        it: {file: 'resume.it.pdf', name: 'Luca-Visciola-CV-IT.pdf'}
+    };
+
     // UI strings around the data. English mirrors index.html, which stays the no-JS fallback
     const STRINGS = {
         en: {
             title: 'Luca Visciola - Resume',
+            pdf: 'Download the resume as PDF',
             loading: '...setting up things 😜',
             shy: '...resume.json is shy. Serve me over http(s) 🙈',
             duality: 'The duality is only apparent...<br>Taking one side or the other won\'t work:',
@@ -49,6 +56,7 @@
         },
         it: {
             title: 'Luca Visciola - Curriculum',
+            pdf: 'Scarica il CV in PDF',
             loading: '...sistemo un paio di cose 😜',
             shy: '...resume.it.json è timido. Servimi via http(s) 🙈',
             duality: 'La dualità è solo apparente...<br>Schierarsi da una parte o dall\'altra non funziona:',
@@ -268,6 +276,14 @@
         const file = FILES[root.dataset.lang];
         document.getElementById('get-resume').setAttribute('href', file);
         document.querySelector('[data-bind="file"]').textContent = file;
+        const pdf = PDFS[root.dataset.lang] || PDFS.en;
+        ['get-pdf', 'get-pdf-machine'].forEach((id) => {
+            const anchor = document.getElementById(id);
+            anchor.setAttribute('href', pdf.file);
+            anchor.setAttribute('download', pdf.name);
+        });
+        document.getElementById('get-pdf').setAttribute('aria-label', strings.pdf);
+        document.querySelector('[data-bind="pdf"]').textContent = pdf.file;
         document.getElementById('copy-feedback').textContent = '';
     };
 
@@ -386,7 +402,7 @@
         MELASISTEMA.showLoader();
 
         if (!resumes.has(lang)) {
-            resumes.set(lang, fetch(`${FILES[lang]}?v=2.1.0`).then((response) => {
+            resumes.set(lang, fetch(`${FILES[lang]}?v=2.2.0`).then((response) => {
                 if (!response.ok) throw new Error(response.statusText);
                 return response.json();
             }));

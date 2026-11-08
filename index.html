@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <!-- Source of truth for versioning: bump here and in the ?v= query strings below -->
-    <meta name="version" content="2.1.0">
+    <meta name="version" content="2.2.0">
 
     <title>Luca Visciola - Resume</title>
 
@@ -24,6 +24,8 @@
 
     <link rel="alternate" type="application/json" href="resume.json" title="Resume (JSON Resume)">
     <link rel="alternate" type="application/json" hreflang="it" href="resume.it.json" title="Curriculum (JSON Resume, italiano)">
+    <link rel="alternate" type="application/pdf" href="resume.pdf" title="Resume (PDF)">
+    <link rel="alternate" type="application/pdf" hreflang="it" href="resume.it.pdf" title="Curriculum (PDF, italiano)">
     <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
 
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
@@ -36,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:wght@300..700&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.2.0">
 
     <!-- Pick mode and language before first paint.
          Mode: saved choice, else the OS theme. Language: ?lang=, else saved choice, else the browser. -->
@@ -70,12 +72,15 @@
 
     <main>
 
-        <nav class="lang" aria-label="Language">
-            <span class="lang-key" aria-hidden="true">lang=</span>
-            <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">en</button>
-            <span class="lang-sep" aria-hidden="true">|</span>
-            <button type="button" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="false">it</button>
-        </nav>
+        <div class="topbar">
+            <a class="pdf human-only" id="get-pdf" href="resume.pdf" download="Luca-Visciola-CV.pdf" aria-label="Download the resume as PDF"><span aria-hidden="true">↓</span> PDF</a>
+            <nav class="lang" aria-label="Language">
+                <span class="lang-key" aria-hidden="true">lang=</span>
+                <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">en</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" data-lang="it" lang="it" aria-label="Italiano" aria-pressed="false">it</button>
+            </nav>
+        </div>
 
         <div class="chooser">
             <p class="description" data-i18n="duality">The duality is only apparent...<br>Taking one side or the other won't work:</p>
@@ -157,6 +162,7 @@
 
             <div class="actions">
                 <a href="resume.json" target="_blank" id="get-resume"><span class="orange">GET</span> /<span data-bind="file">resume.json</span></a>
+                <a href="resume.pdf" download="Luca-Visciola-CV.pdf" id="get-pdf-machine"><span class="orange">GET</span> /<span data-bind="pdf">resume.pdf</span></a>
                 <a href="llms.txt" target="_blank"><span class="orange">GET</span> /llms.txt</a>
                 <button type="button" id="copy-prompt"><span class="yellow">copy</span>(<span class="purple">$as_prompt</span>)</button>
             </div>
@@ -167,7 +173,7 @@
 
     </main>
 
-    <script src="assets/js/main.js?v=2.1.0"></script>
+    <script src="assets/js/main.js?v=2.2.0"></script>
 
 </body>
 

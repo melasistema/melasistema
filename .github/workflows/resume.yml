@@ -1,13 +1,14 @@
-# Validates resume.json and its Italian twin against the JSON Resume schema.
+# Validates resume.json and its Italian twin against the JSON Resume schema,
+# and checks that the PDFs rendered by scripts/pdf.sh are not older than their JSON.
 # The workflow name is the badge label in the README: "resume.json | passing".
 name: resume.json
 
 on:
   push:
     branches: [main]
-    paths: [resume.json, resume.it.json, .github/workflows/resume.yml]
+    paths: [resume.json, resume.it.json, resume.pdf, resume.it.pdf, .github/workflows/resume.yml]
   pull_request:
-    paths: [resume.json, resume.it.json, .github/workflows/resume.yml]
+    paths: [resume.json, resume.it.json, resume.pdf, resume.it.pdf, .github/workflows/resume.yml]
   workflow_dispatch:
 
 permissions:
@@ -18,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the PDF check compares commit dates
 
       - uses: actions/setup-node@v4
         with:
@@ -38,3 +41,17 @@ jobs:
               });
             }
           '
+
+      - name: PDFs are not older than their JSON
+        run: |
+          stale=0
+          for pair in resume.json:resume.pdf resume.it.json:resume.it.pdf; do
+            json=${pair%%:*} pdf=${pair##*:}
+            json_at=$(git log -1 --format=%ct -- "$json")
+            pdf_at=$(git log -1 --format=%ct -- "$pdf")
+            if [ "${json_at:-0}" -gt "${pdf_at:-0}" ]; then
+              echo "::error file=$pdf::$pdf is older than $json: run scripts/pdf.sh and commit it"
+              stale=1
+            fi
+          done
+          exit $stale
